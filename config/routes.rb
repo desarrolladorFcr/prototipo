@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   post 'login/recuperar'
   #login
   get 'login/salir'
+  #Perfil
+  get 'perfil/hola'
 end
