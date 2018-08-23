@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @curso.nombre %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @curso.descripcion %>
+</p>
+
+<p>
+  <strong>Imagen:</strong>
+  <%= @curso.imagen %>
+</p>
+
+<p>
+  <strong>Incluye:</strong>
+  <%= @curso.incluye %>
+</p>
+
+<p>
+  <strong>Enfocado a:</strong>
+  <%= @curso.enfocado_a %>
+</p>
+
+<p>
+  <strong>Requisitos:</strong>
+  <%= @curso.requisitos %>
+</p>
+
+<p>
+  <strong>Tiempo estimado:</strong>
+  <%= @curso.tiempo_estimado %>
+</p>
+
+<p>
+  <strong>Certificable:</strong>
+  <%= @curso.certificable %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @curso.estado %>
+</p>
+
+<%= link_to 'Edit', edit_curso_path(@curso) %> |
+<%= link_to 'Back', cursos_path %>

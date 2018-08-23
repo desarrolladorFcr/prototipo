@@ -1,0 +1,2 @@
+class ActividadTema < ApplicationRecord
+end

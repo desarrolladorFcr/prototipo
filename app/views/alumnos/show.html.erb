@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @alumno.nombre %>
+</p>
+
+<p>
+  <strong>Apellidos:</strong>
+  <%= @alumno.apellidos %>
+</p>
+
+<p>
+  <strong>Documento:</strong>
+  <%= @alumno.documento %>
+</p>
+
+<p>
+  <strong>Tipo documento:</strong>
+  <%= @alumno.tipo_documento %>
+</p>
+
+<p>
+  <strong>Correo:</strong>
+  <%= @alumno.correo %>
+</p>
+
+<p>
+  <strong>Psw:</strong>
+  <%= @alumno.psw %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @alumno.telefono %>
+</p>
+
+<p>
+  <strong>Cod recovery:</strong>
+  <%= @alumno.cod_recovery %>
+</p>
+
+<p>
+  <strong>Nacimiento:</strong>
+  <%= @alumno.nacimiento %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @alumno.estado %>
+</p>
+
+<%= link_to 'Edit', edit_alumno_path(@alumno) %> |
+<%= link_to 'Back', alumnos_path %>

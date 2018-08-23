@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @modulo.nombre %>
+</p>
+
+<p>
+  <strong>Fecha inicio:</strong>
+  <%= @modulo.fecha_inicio %>
+</p>
+
+<p>
+  <strong>Fecha fin:</strong>
+  <%= @modulo.fecha_fin %>
+</p>
+
+<%= link_to 'Edit', edit_modulo_path(@modulo) %> |
+<%= link_to 'Back', modulos_path %>

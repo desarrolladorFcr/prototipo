@@ -1,0 +1,22 @@
+<%= form_with(model: recurso_adicional, local: true) do |form| %>
+  <% if recurso_adicional.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(recurso_adicional.errors.count, "error") %> prohibited this recurso_adicional from being saved:</h2>
+
+      <ul>
+      <% recurso_adicional.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :titulo %>
+    <%= form.text_field :titulo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

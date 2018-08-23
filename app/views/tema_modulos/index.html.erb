@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tema Modulos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tema</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tema_modulos.each do |tema_modulo| %>
+      <tr>
+        <td><%= tema_modulo.tema %></td>
+        <td><%= link_to 'Show', tema_modulo %></td>
+        <td><%= link_to 'Edit', edit_tema_modulo_path(tema_modulo) %></td>
+        <td><%= link_to 'Destroy', tema_modulo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tema Modulo', new_tema_modulo_path %>

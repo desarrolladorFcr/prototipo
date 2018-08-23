@@ -1,0 +1,27 @@
+<div class="login-page">
+  <div class="form">
+      <h3>BIENVENIDO A PUBLED</h3>
+    <% if @opt == '1'%>
+        <%= form_tag({controller: "login", action: "recuperar"}, {method: "post", class: "login-form"}) do%>
+        <h5>Ingrese su correo electrónico, y le enviaremos un mensaje de recuperación</h5>
+        <%= text_field_tag('correo', nil, {:placeholder => "Correo"}) %>
+        <button>Enviar</button>
+        <p class="message">
+          <%= link_to("Volver", :controller => 'login', :action => 'index')%>
+        </p>
+      <% end%>
+    <% else%>
+      <%= form_tag({controller: "login", action: "ingreso"}, {method: "post", class: "login-form"}) do%>
+      <%= text_field_tag('correo', @correo, {:placeholder => 'Correo'})%>
+      <%= password_field_tag('password', nil, {:placeholder => 'Contraseña'})%>
+      <button type="submit">Ingresar</button>
+      <p style="color:red">
+        <%= @alert %>
+      <p>
+      <p class="message">
+        <%= link_to("Olvidó su contraseña", :controller => 'login', :action => 'index', :opt => '1')%>
+      </p>
+    <% end%>
+  <%end%>
+  </div>
+</div>
