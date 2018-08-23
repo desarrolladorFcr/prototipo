@@ -1,0 +1,14 @@
+// Place all the styles related to the Perfil controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+  background: #bbd700; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #bbd700, #00c3c9);
+  background: -moz-linear-gradient(right, #bbd700, #00c3c9);
+  background: -o-linear-gradient(right, #bbd700, #00c3c9);
+  background: linear-gradient(to left, #bbd700, #00c3c9);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

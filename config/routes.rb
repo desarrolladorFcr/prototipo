@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'inicio#index'
+  root 'perfil#index'
   resources :actividad_temas
   resources :recurso_adicionals
   resources :tipo_contenidos
@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   get 'adm_panel/prueba'
   get 'adm_panel/cerrar'
   get 'login/index'
-  get 'inicio/bienvenido'
   post 'login/ingreso'
   post 'login/recuperar'
   #login
