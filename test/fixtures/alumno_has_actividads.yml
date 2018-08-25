@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  alumnos: one
+  actividad_temas: one
+  solucion: MyText
+  calificacion: MyString
+  profesor_id: 1
+  observaciones: MyText
+  fecha_solucion: 2018-08-25 12:38:53
+
+two:
+  alumnos: two
+  actividad_temas: two
+  solucion: MyText
+  calificacion: MyString
+  profesor_id: 1
+  observaciones: MyText
+  fecha_solucion: 2018-08-25 12:38:53

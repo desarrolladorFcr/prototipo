@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_22_165359) do
+ActiveRecord::Schema.define(version: 2018_08_25_173853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,28 @@ ActiveRecord::Schema.define(version: 2018_08_22_165359) do
     t.string "descripcion", limit: 255
     t.bigint "tema_modulos_id"
     t.index ["tema_modulos_id"], name: "index_actividad_temas_on_tema_modulos_id"
+  end
+
+  create_table "alumno_has_actividads", force: :cascade do |t|
+    t.bigint "alumnos_id"
+    t.bigint "actividad_temas_id"
+    t.text "solucion"
+    t.string "calificacion"
+    t.integer "profesor_id"
+    t.text "observaciones"
+    t.datetime "fecha_solucion"
+    t.index ["actividad_temas_id"], name: "index_alumno_has_actividads_on_actividad_temas_id"
+    t.index ["alumnos_id"], name: "index_alumno_has_actividads_on_alumnos_id"
+  end
+
+  create_table "alumno_has_cursos", force: :cascade do |t|
+    t.bigint "alumnos_id"
+    t.bigint "cursos_id"
+    t.date "fecha_inicio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["alumnos_id"], name: "index_alumno_has_cursos_on_alumnos_id"
+    t.index ["cursos_id"], name: "index_alumno_has_cursos_on_cursos_id"
   end
 
   create_table "alumnos", force: :cascade do |t|
@@ -59,6 +81,15 @@ ActiveRecord::Schema.define(version: 2018_08_22_165359) do
     t.bigint "areas_id"
     t.index ["areas_id"], name: "index_cursos_on_areas_id"
     t.index ["universidad_id"], name: "index_cursos_on_universidad_id"
+  end
+
+  create_table "cursos_has_profs", force: :cascade do |t|
+    t.bigint "cursos_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "profesor_id"
+    t.index ["cursos_id"], name: "index_cursos_has_profs_on_cursos_id"
+    t.index ["profesor_id"], name: "index_cursos_has_profs_on_profesor_id"
   end
 
   create_table "data_usuarios", force: :cascade do |t|
@@ -118,8 +149,14 @@ ActiveRecord::Schema.define(version: 2018_08_22_165359) do
   end
 
   add_foreign_key "actividad_temas", "tema_modulos", column: "tema_modulos_id"
+  add_foreign_key "alumno_has_actividads", "actividad_temas", column: "actividad_temas_id"
+  add_foreign_key "alumno_has_actividads", "alumnos", column: "alumnos_id"
+  add_foreign_key "alumno_has_cursos", "alumnos", column: "alumnos_id"
+  add_foreign_key "alumno_has_cursos", "cursos", column: "cursos_id"
   add_foreign_key "cursos", "areas", column: "areas_id"
   add_foreign_key "cursos", "usuarios", column: "universidad_id"
+  add_foreign_key "cursos_has_profs", "cursos", column: "cursos_id"
+  add_foreign_key "cursos_has_profs", "usuarios", column: "profesor_id"
   add_foreign_key "data_usuarios", "usuarios", column: "usuarios_id"
   add_foreign_key "modulos", "cursos", column: "cursos_id"
   add_foreign_key "recurso_adicionals", "tema_modulos", column: "tema_modulos_id"

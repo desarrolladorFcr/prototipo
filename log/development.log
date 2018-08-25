@@ -25852,3 +25852,160 @@ Completed 200 OK in 388ms (Views: 387.4ms | ActiveRecord: 0.0ms)
 Completed 200 OK in 743ms (Views: 735.4ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4955524274535625770)[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (38.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateCursosHasProfs (20180825164249)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (368.7ms)[0m  [1m[35mCREATE TABLE "cursos_has_profs" ("id" bigserial primary key, "cursos_id" bigint, "usuarios_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9207da0af9"
+FOREIGN KEY ("cursos_id")
+  REFERENCES "cursos" ("id")
+, CONSTRAINT "fk_rails_c08e75dfb5"
+FOREIGN KEY ("usuarios_id")
+  REFERENCES "usuarios" ("id")
+)[0m
+  ↳ db/migrate/20180825164249_create_cursos_has_profs.rb:3
+  [1m[35m (59.7ms)[0m  [1m[35mCREATE  INDEX  "index_cursos_has_profs_on_cursos_id" ON "cursos_has_profs"  ("cursos_id")[0m
+  ↳ db/migrate/20180825164249_create_cursos_has_profs.rb:3
+  [1m[35m (63.6ms)[0m  [1m[35mCREATE  INDEX  "index_cursos_has_profs_on_usuarios_id" ON "cursos_has_profs"  ("usuarios_id")[0m
+  ↳ db/migrate/20180825164249_create_cursos_has_profs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180825164249"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (16.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Load (29.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(4955524274535625770)[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4955524274535625770)[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateCursosHasProfs (20180825165309)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (61.2ms)[0m  [1m[35mCREATE TABLE "cursos_has_profs" ("id" bigserial primary key, "cursos_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9207da0af9"
+FOREIGN KEY ("cursos_id")
+  REFERENCES "cursos" ("id")
+)[0m
+  ↳ db/migrate/20180825165309_create_cursos_has_profs.rb:3
+  [1m[35m (47.9ms)[0m  [1m[35mCREATE  INDEX  "index_cursos_has_profs_on_cursos_id" ON "cursos_has_profs"  ("cursos_id")[0m
+  ↳ db/migrate/20180825165309_create_cursos_has_profs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180825165309"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (16.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(4955524274535625770)[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4955524274535625770)[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to AddProfesorRefToCursosHasProfs (20180825171339)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "cursos_has_profs" ADD "profesor_id" bigint[0m
+  ↳ db/migrate/20180825171339_add_profesor_ref_to_cursos_has_profs.rb:3
+  [1m[35m (57.6ms)[0m  [1m[35mCREATE  INDEX  "index_cursos_has_profs_on_profesor_id" ON "cursos_has_profs"  ("profesor_id")[0m
+  ↳ db/migrate/20180825171339_add_profesor_ref_to_cursos_has_profs.rb:3
+  [1m[35m (28.8ms)[0m  [1m[35mALTER TABLE "cursos_has_profs" ADD CONSTRAINT "fk_rails_4bb501e96d"
+FOREIGN KEY ("profesor_id")
+  REFERENCES "usuarios" ("id")
+[0m
+  ↳ db/migrate/20180825171339_add_profesor_ref_to_cursos_has_profs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180825171339"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (12.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4955524274535625770)[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4955524274535625770)[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateAlumnoHasCursos (20180825172224)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (102.4ms)[0m  [1m[35mCREATE TABLE "alumno_has_cursos" ("id" bigserial primary key, "alumnos_id" bigint, "cursos_id" bigint, "fecha_inicio" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_1c2dfeafe7"
+FOREIGN KEY ("alumnos_id")
+  REFERENCES "alumnos" ("id")
+, CONSTRAINT "fk_rails_162e4e0156"
+FOREIGN KEY ("cursos_id")
+  REFERENCES "cursos" ("id")
+)[0m
+  ↳ db/migrate/20180825172224_create_alumno_has_cursos.rb:3
+  [1m[35m (41.5ms)[0m  [1m[35mCREATE  INDEX  "index_alumno_has_cursos_on_alumnos_id" ON "alumno_has_cursos"  ("alumnos_id")[0m
+  ↳ db/migrate/20180825172224_create_alumno_has_cursos.rb:3
+  [1m[35m (51.3ms)[0m  [1m[35mCREATE  INDEX  "index_alumno_has_cursos_on_cursos_id" ON "alumno_has_cursos"  ("cursos_id")[0m
+  ↳ db/migrate/20180825172224_create_alumno_has_cursos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180825172224"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (22.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4955524274535625770)[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4955524274535625770)[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateAlumnoHasActividads (20180825173853)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (107.6ms)[0m  [1m[35mCREATE TABLE "alumno_has_actividads" ("id" bigserial primary key, "alumnos_id" bigint, "actividad_temas_id" bigint, "solucion" text, "calificacion" character varying, "profesor_id" integer, "observaciones" text, "fecha_solucion" timestamp, CONSTRAINT "fk_rails_d2aff3b4d3"
+FOREIGN KEY ("alumnos_id")
+  REFERENCES "alumnos" ("id")
+, CONSTRAINT "fk_rails_6b1f7aff86"
+FOREIGN KEY ("actividad_temas_id")
+  REFERENCES "actividad_temas" ("id")
+)[0m
+  ↳ db/migrate/20180825173853_create_alumno_has_actividads.rb:3
+  [1m[35m (58.4ms)[0m  [1m[35mCREATE  INDEX  "index_alumno_has_actividads_on_alumnos_id" ON "alumno_has_actividads"  ("alumnos_id")[0m
+  ↳ db/migrate/20180825173853_create_alumno_has_actividads.rb:3
+  [1m[35m (50.5ms)[0m  [1m[35mCREATE  INDEX  "index_alumno_has_actividads_on_actividad_temas_id" ON "alumno_has_actividads"  ("actividad_temas_id")[0m
+  ↳ db/migrate/20180825173853_create_alumno_has_actividads.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180825173853"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(4955524274535625770)[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
