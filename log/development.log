@@ -25836,3 +25836,19 @@ Processing by PerfilController#hola as HTML
 Completed 200 OK in 39ms (Views: 33.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-08-23 19:27:37 -0500
+  [1m[35m (43.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PerfilController#index as HTML
+  Rendering perfil/index.html.erb within layouts/perfil
+  Rendered perfil/index.html.erb within layouts/perfil (0.9ms)
+Started GET "/" for 127.0.0.1 at 2018-08-23 19:27:39 -0500
+Processing by PerfilController#index as HTML
+  Rendering perfil/index.html.erb within layouts/perfil
+  Rendered perfil/index.html.erb within layouts/perfil (0.4ms)
+Completed 200 OK in 388ms (Views: 387.4ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 743ms (Views: 735.4ms | ActiveRecord: 0.0ms)
+
+
