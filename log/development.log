@@ -26009,3 +26009,826 @@ FOREIGN KEY ("actividad_temas_id")
   ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
   [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Started GET "/" for 127.0.0.1 at 2018-08-26 00:02:43 -0500
+  [1m[35m (37.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PerfilController#index as HTML
+  Rendering perfil/index.html.erb within layouts/perfil
+  Rendered perfil/index.html.erb within layouts/perfil (2.4ms)
+Completed 200 OK in 738ms (Views: 720.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/index" for 127.0.0.1 at 2018-08-26 00:02:51 -0500
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/login
+  Rendered login/index.html.erb within layouts/login (11.4ms)
+Completed 200 OK in 73ms (Views: 62.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/" for 127.0.0.1 at 2018-08-26 00:02:57 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/login/ingreso" for 127.0.0.1 at 2018-08-26 00:03:11 -0500
+Processing by LoginController#ingreso as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jrSfnO3B69REUO6NDptvwcCrZzLpkaSvIn8HiPHiwVdArVDRxpPqsG8A9j2A9aBi7F/wfullut3urrgpEjGRFg==", "correo"=>"cifuentesrfelipe@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUsuario Load (38.8ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 AND "usuarios"."estado" = $2 AND "usuarios"."validado" = $3 LIMIT $4[0m  [["correo", "cifuentesrfelipe@gmail.com"], ["estado", 1], ["validado", 1], ["LIMIT", 1]]
+  ↳ app/models/usuario.rb:10
+Redirected to http://localhost:3000/adm_panel/index
+Completed 302 Found in 577ms (ActiveRecord: 424.5ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-08-26 00:03:12 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (1.0ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+Completed 200 OK in 445ms (Views: 432.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-08-26 00:08:28 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (0.7ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 30ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-08-26 00:08:33 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (0.7ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 36ms (Views: 33.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-08-26 00:10:42 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (0.5ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 31ms (Views: 29.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-08-26 00:39:53 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (0.2ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-26 00:39:54 -0500
+Processing by PerfilController#index as HTML
+  Rendering perfil/index.html.erb within layouts/perfil
+  Rendered perfil/index.html.erb within layouts/perfil (0.6ms)
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-26 00:39:58 -0500
+Processing by PerfilController#index as HTML
+  Rendering perfil/index.html.erb within layouts/perfil
+  Rendered perfil/index.html.erb within layouts/perfil (0.7ms)
+Completed 200 OK in 18ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-08-26 00:40:55 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (1.1ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 38ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 00:40:57 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb
+  Rendered usuarios/universidad.html.erb (1.6ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 00:41:41 -0500
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/controllers/usuarios_controller.rb:2: syntax error, unexpected ':', expecting keyword_end
+  layout: 'admin'
+        ^):
+  
+app/controllers/usuarios_controller.rb:2: syntax error, unexpected ':', expecting keyword_end
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 00:42:19 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.7ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 23ms (Views: 22.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 00:43:43 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (4.1ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 59ms (Views: 55.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 00:44:31 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.6ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 00:44:46 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (2.3ms)
+  Rendered layouts/_navbar.html.erb (2.1ms)
+  Rendered layouts/_sidebar.html.erb (1.6ms)
+Completed 200 OK in 81ms (Views: 77.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 00:45:05 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.2ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 31ms (Views: 30.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 00:46:47 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (3.5ms)
+  Rendered layouts/_navbar.html.erb (1.9ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+Completed 200 OK in 64ms (Views: 61.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 00:47:11 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (4.5ms)
+  Rendered layouts/_navbar.html.erb (1.9ms)
+  Rendered layouts/_sidebar.html.erb (1.6ms)
+Completed 200 OK in 88ms (Views: 86.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 00:47:42 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (6.1ms)
+  Rendered layouts/_navbar.html.erb (2.5ms)
+  Rendered layouts/_sidebar.html.erb (1.5ms)
+Completed 200 OK in 88ms (Views: 85.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 00:47:49 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (4.9ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 65ms (Views: 62.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 00:48:04 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.0ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 26ms (Views: 25.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 00:48:24 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (5.8ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 60ms (Views: 57.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 00:48:52 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (3.6ms)
+  Rendered layouts/_navbar.html.erb (1.6ms)
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+Completed 200 OK in 75ms (Views: 72.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 00:49:08 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (4.8ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 70ms (Views: 68.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 00:49:23 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.6ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 32ms (Views: 30.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 00:49:51 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (3.6ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 78ms (Views: 74.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 00:53:14 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.0ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+Completed 200 OK in 25ms (Views: 24.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 00:53:30 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.0ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 32ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 00:53:50 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.9ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 35ms (Views: 34.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 00:54:07 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.1ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 31ms (Views: 30.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 00:54:13 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (5.1ms)
+  Rendered layouts/_navbar.html.erb (1.9ms)
+  Rendered layouts/_sidebar.html.erb (1.4ms)
+Completed 200 OK in 88ms (Views: 85.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 00:55:28 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (3.8ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 67ms (Views: 63.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 00:55:53 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.2ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 00:56:17 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.1ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 28ms (Views: 26.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 01:06:35 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (2.0ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 28ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 01:06:36 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (2.3ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 35ms (Views: 32.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 01:06:37 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (2.7ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 36ms (Views: 33.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 01:36:00 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (2.1ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 34ms (Views: 32.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 01:40:45 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.4ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 22ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-26 01:40:52 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aBH+VQtqI/H3IYmJX8eXxTgOUdZOFcEczww7IIDXBkpOF16VhqJT6yMP+bzYPxTWvYqWgjYzQTpVdFSaxUWoyw==", "nombre"=>"asdsdssdf", "correo"=>"cifuentesrfelipe@gmail.com"}
+Completed 500 Internal Server Error in 169ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `univeridad' for #<UsuariosController:0x00007f3dc0c0ed10>
+Did you mean?  universidad):
+  
+app/controllers/usuarios_controller.rb:10:in `crea_u'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 01:41:34 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.7ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 40ms (Views: 39.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 01:41:37 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.6ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-26 01:41:42 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9x76ha/oWkWmIJP+tSt5ArHVcRT+To4cA30MyG7TEMPRGFpFIiAqX3IO48sy0/oRNFG2QIZoDjqZBWNyK0G+Qg==", "nombre"=>"Pedro páramo", "correo"=>"cifuentesrfelipe@gmail.com"}
+Redirected to 
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"univeridad", :controller=>"usuarios"}):
+  
+app/controllers/usuarios_controller.rb:10:in `crea_u'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 01:42:12 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (2.0ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 25ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 01:42:13 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.6ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-26 01:42:19 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mRk6K+VWzJq+JputKwnKXcq7tjbtevQkgydJ0cwtlui/H5rraJ68gGoI65is8UlOTz9xYpVcdAIZXyZrib84aQ==", "nombre"=>"Pedro páramo", "correo"=>"cifuentesrfelipe@gmail.com"}
+Redirected to http://localhost:3000/usuarios/universidad
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 01:42:19 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (2.0ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 30ms (Views: 29.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 01:43:44 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (2.1ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 27ms (Views: 26.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-26 01:51:42 -0500
+Processing by PerfilController#index as HTML
+  Rendering perfil/index.html.erb within layouts/perfil
+  Rendered perfil/index.html.erb within layouts/perfil (0.3ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2018-08-26 09:19:14 -0500
+  [1m[35m (36.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/users/login"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 09:19:16 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (12.4ms)
+  Rendered layouts/_navbar.html.erb (1.6ms)
+  Rendered layouts/_sidebar.html.erb (1.3ms)
+Completed 200 OK in 1221ms (Views: 1218.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 09:20:11 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (6.4ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 108ms (Views: 105.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 09:30:24 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (2.5ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial ../layout/_msj with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/t01/ruby_py/Publed/app/views"
+  * "/var/lib/gems/2.5.0/gems/devise-4.4.3/app/views"
+):
+    11:     <input name="correo" class="form-control" required type="email">
+    12:     <br>
+    13:       <button type="submit" class="btn btn-success">Crear</button>
+    14:       <%= render "../layout/msj"%>
+    15:   <% end%>
+    16: </div>
+  
+app/views/usuarios/universidad.html.erb:14:in `block in _app_views_usuarios_universidad_html_erb___2597762174799484791_69851515487640'
+app/views/usuarios/universidad.html.erb:7:in `_app_views_usuarios_universidad_html_erb___2597762174799484791_69851515487640'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 09:34:06 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.4ms)
+  Rendered layouts/_navbar.html.erb (1.3ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 23ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 09:35:44 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.4ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 09:37:48 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.8ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of nil into String):
+    11:     <input name="correo" class="form-control" required type="email">
+    12:     <br>
+    13:       <button type="submit" class="btn btn-success">Crear</button>
+    14:       <%= msj%>
+    15:   <% end%>
+    16: </div>
+  
+app/helpers/application_helper.rb:23:in `+'
+app/helpers/application_helper.rb:23:in `msj'
+app/views/usuarios/universidad.html.erb:14:in `block in _app_views_usuarios_universidad_html_erb___2597762174799484791_69851538496220'
+app/views/usuarios/universidad.html.erb:7:in `_app_views_usuarios_universidad_html_erb___2597762174799484791_69851538496220'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 09:42:08 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.5ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 09:42:09 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.0ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 23ms (Views: 22.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 09:42:09 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (4.2ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 38ms (Views: 35.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 09:42:09 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (4.6ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 52ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 09:42:09 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.6ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+Completed 200 OK in 35ms (Views: 34.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 09:42:10 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.2ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 32ms (Views: 31.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 09:42:10 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (2.1ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 34ms (Views: 31.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 09:42:10 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (0.8ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-26 09:43:37 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+ymT9RSz5mA7+QSybqmR0raLUVD1NQbE+NTaoS1uFJmK+gmB0dKW0XNbfOnSy6c2AKpn8bmpXqFbB6jORzY+cw==", "nombre"=>"Pedro páramo", "correo"=>"cifuentesrfelipe@gmail.com"}
+Redirected to http://localhost:3000/usuarios/universidad
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 09:43:37 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (0.9ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 20ms (Views: 19.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 09:44:25 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.7ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 20ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 09:44:26 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (2.2ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 30ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 09:44:26 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (6.3ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 45ms (Views: 43.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 09:44:26 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (3.8ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 44ms (Views: 42.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-26 09:44:34 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OSzJhKpOh5KPhp5VSX7iNcSwy61Jj24dDDnbjwMByH1I/1Pwby/3I8ck5g71HNTRcpH9DAUTNniv6qngaVnilw==", "nombre"=>"Pedro páramo", "correo"=>"cifuentesrfelipess@gmail.com"}
+Redirected to http://localhost:3000/usuarios/universidad
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 09:44:34 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (0.9ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 23ms (Views: 22.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 10:02:55 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.5ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-26 10:04:43 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ueZzPRpzDI9pCQioEJftDF2vV9RLqck6mhlvIucKs0LINelJ3xJ8PiGrcPOs9dvo645hdQc1kV85yh1NjVKZqA==", "nombre"=>"Carlos Cipagauta", "correo"=>"cifuentesrfelipe@gmail.com"}
+  [1m[36mUsuario Load (20.9ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "cifuentesrfelipe@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+Redirected to 
+Completed 500 Internal Server Error in 312ms (ActiveRecord: 193.7ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"index", :controller=>"usuarios"}):
+  
+app/controllers/usuarios_controller.rb:15:in `crea_u'
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-26 10:05:17 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ueZzPRpzDI9pCQioEJftDF2vV9RLqck6mhlvIucKs0LINelJ3xJ8PiGrcPOs9dvo645hdQc1kV85yh1NjVKZqA==", "nombre"=>"Carlos Cipagauta", "correo"=>"cifuentesrfelipe@gmail.com"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "cifuentesrfelipe@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+Redirected to http://localhost:3000/usuarios/universidad
+Completed 302 Found in 13ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 10:05:17 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.3ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 10:08:04 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (2.9ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 30ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 23:47:22 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (8.0ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+Completed 200 OK in 205ms (Views: 204.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-26 23:47:47 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cRSKxa0K5to5mdz88TEKgont3SfJKzw+a8j2K9jZDa8AxxCxaGuWa3E7pKdNUzxmP8zrhoW3ZFvIG4REsoEnRQ==", "nombre"=>"Universidad Manuela Beltran", "correo"=>"torre1alta@gmail.com"}
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "torre1alta@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[36mUsuario Create (154.7ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "tipo", "correo", "estado", "cod_recovery", "validado", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["nombre", "Universidad Manuela Beltran"], ["tipo", 2], ["correo", "torre1alta@gmail.com"], ["estado", 1], ["cod_recovery", 860], ["validado", 2], ["created_at", "2018-08-27 04:47:47.450331"], ["updated_at", "2018-08-27 04:47:47.450331"]]
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[35m (45.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+No template found for UsuariosController#crea_u, rendering head :no_content
+Completed 204 No Content in 582ms (ActiveRecord: 215.8ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-26 23:48:01 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cRSKxa0K5to5mdz88TEKgont3SfJKzw+a8j2K9jZDa8AxxCxaGuWa3E7pKdNUzxmP8zrhoW3ZFvIG4REsoEnRQ==", "nombre"=>"Universidad Manuela Beltran", "correo"=>"torre1alta@gmail.com"}
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "torre1alta@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+Redirected to http://localhost:3000/usuarios/universidad
+Completed 302 Found in 19ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-26 23:48:01 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.1ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 0.0ms)
+
+

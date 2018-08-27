@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   get 'login/index'
   post 'login/ingreso'
   post 'login/recuperar'
+  #usuarios
+  get 'usuarios/universidad'
+  post 'usuarios/crea_u'
   #login
   get 'login/salir'
   #Perfil
