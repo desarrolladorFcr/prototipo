@@ -32,6 +32,7 @@ class UsuariosController < ApplicationController
     end
   end
   def conf_universidad
-    
+    @id = params['id']
+    @cod = params['cod']
   end
 end
