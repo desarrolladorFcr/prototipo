@@ -16,17 +16,22 @@ class UsuariosController < ApplicationController
       usuModel.estado = ACTIVO
       usuModel.validado = SIN_VALIDAR
       usuModel.cod_recovery = rand(9999)
+      usuModel.psw = encriptaTexto(rand(9999999).to_s)
       usuModel.save
-      params['id'] = usuModel.id
-      params['cod'] = usuModel.cod_recovery
-      UsuarioMailer.valida_usuario(params)
+      link = url_actual('usuarios/conf_universidad')
+      cod = enc_cod(usuModel.cod_recovery)
+      id = enc_id(usuModel.id)
+      link = link+'?in=#{cod}_#{id}'
+      params['link'] = link
+      UsuarioMailer.valida_universidad(params).deliver_now
       flash[:alert] = "Usuario creado. Se le ha enviado un correo electrónico a la universidad para que active y complete el registro"
+      redirect_to({:action => "universidad"})
     else
       flash[:alert] = "El usuario ya existe"
       redirect_to({:action => "universidad"})
     end
   end
   def conf_universidad
-
+    
   end
 end

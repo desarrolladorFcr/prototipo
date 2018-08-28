@@ -26832,3 +26832,944 @@ Processing by UsuariosController#universidad as HTML
 Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-08-27 10:58:41 -0500
+  [1m[35m (37.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PerfilController#index as HTML
+  Rendering perfil/index.html.erb within layouts/perfil
+  Rendered perfil/index.html.erb within layouts/perfil (3.5ms)
+Completed 200 OK in 726ms (Views: 709.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 10:58:43 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (8.1ms)
+  Rendered layouts/_navbar.html.erb (2.4ms)
+  Rendered layouts/_sidebar.html.erb (1.5ms)
+Completed 200 OK in 595ms (Views: 592.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/index" for 127.0.0.1 at 2018-08-27 10:59:32 -0500
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/login
+  Rendered login/index.html.erb within layouts/login (6.4ms)
+Completed 200 OK in 99ms (Views: 61.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login/ingreso" for 127.0.0.1 at 2018-08-27 10:59:45 -0500
+Processing by LoginController#ingreso as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MmhMsvxZIFG2ujk+XAPyv9MSqd3Y8pWomdc0/O9fym1jma22LYzoc8aYxEjifKl/EWjG7I2Y3yjVC31oYKg75Q==", "correo"=>"cifuentesrfelipe@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUsuario Load (2.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 AND "usuarios"."estado" = $2 AND "usuarios"."validado" = $3 LIMIT $4[0m  [["correo", "cifuentesrfelipe@gmail.com"], ["estado", 1], ["validado", 1], ["LIMIT", 1]]
+  ↳ app/models/usuario.rb:10
+Redirected to http://localhost:3000/adm_panel/index
+Completed 302 Found in 310ms (ActiveRecord: 93.8ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-08-27 10:59:46 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (1.2ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 48ms (Views: 35.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 10:59:52 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (7.0ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 75ms (Views: 72.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-27 11:02:53 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mvEu1jTo02YTeKzAqLl9q/H+SG8R4m4LU/sgT5bekJ6IgN0vvnQ/mVXb+uzc2+9okrezIHzh0UhgfKXLWWhTeA==", "nombre"=>"Universidad Manuela Beltran", "correo"=>"torre1alta@gmail.com"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "torre1alta@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[36mUsuario Create (89.6ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "tipo", "correo", "estado", "cod_recovery", "validado", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["nombre", "Universidad Manuela Beltran"], ["tipo", 2], ["correo", "torre1alta@gmail.com"], ["estado", 1], ["cod_recovery", 7554], ["validado", 2], ["created_at", "2018-08-27 16:02:53.722408"], ["updated_at", "2018-08-27 16:02:53.722408"]]
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[35m (45.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+No template found for UsuariosController#crea_u, rendering head :no_content
+Completed 204 No Content in 1015ms (ActiveRecord: 141.4ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 11:09:17 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.5ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 21ms (Views: 20.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 11:09:24 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (5.3ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 49ms (Views: 46.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 11:09:25 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (6.3ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 47ms (Views: 44.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 11:09:25 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (4.2ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 63ms (Views: 59.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 11:09:26 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (3.8ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+Completed 200 OK in 66ms (Views: 63.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-27 11:10:02 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RHBneIBNkC2BmlNnG8EPZhG6YCQhBgAhW6QgzKvFMGhWAZSBCtF80sc5BUtvo52lcvOba0wFv2JoI6VIZHPzjg==", "nombre"=>"Universidad Manuela Beltran", "correo"=>"torre1alta@gmail.com"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "torre1alta@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[36mUsuario Create (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "tipo", "correo", "estado", "cod_recovery", "validado", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["nombre", "Universidad Manuela Beltran"], ["tipo", 2], ["correo", "torre1alta@gmail.com"], ["estado", 1], ["cod_recovery", 5659], ["validado", 2], ["created_at", "2018-08-27 16:10:02.713062"], ["updated_at", "2018-08-27 16:10:02.713062"]]
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[35m (42.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+Completed 500 Internal Server Error in 129ms (ActiveRecord: 50.4ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/usuarios_controller.rb:24:in `crea_u'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 11:12:03 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.9ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 29ms (Views: 27.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-27 11:12:12 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p1TXLlyREQyZy/XCR7yW7wUneNERAa9AD4JKtcE1wqe1JSTX1g39899oo+4z3gQsZm6DnnwCEAM8Bc8xDoMBQQ==", "nombre"=>"Universidad Manuela Beltran", "correo"=>"torre1alta@gmail.com"}
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "torre1alta@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[36mUsuario Create (0.9ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "tipo", "correo", "estado", "cod_recovery", "validado", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["nombre", "Universidad Manuela Beltran"], ["tipo", 2], ["correo", "torre1alta@gmail.com"], ["estado", 1], ["cod_recovery", 8717], ["validado", 2], ["created_at", "2018-08-27 16:12:12.656946"], ["updated_at", "2018-08-27 16:12:12.656946"]]
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[35m (22.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+  Rendering usuarios/prueba.html.erb within layouts/admin
+  Rendered usuarios/prueba.html.erb within layouts/admin (1.8ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 149ms (Views: 63.1ms | ActiveRecord: 38.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 11:27:10 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.8ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 11:27:19 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.9ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-27 11:27:26 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c4tDb/3csemACzDbUQSzOuplZT1CTEm3j/TLvFpY6Vhh+rCWd0BdFsaoZvclZiH5iSyeci9P9vS8c044le4qvg==", "nombre"=>"Universidad Manuela Beltran", "correo"=>"torre1alta@gmail.com"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "torre1alta@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[36mUsuario Create (0.5ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "tipo", "correo", "estado", "cod_recovery", "validado", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["nombre", "Universidad Manuela Beltran"], ["tipo", 2], ["correo", "torre1alta@gmail.com"], ["estado", 1], ["cod_recovery", 2112], ["validado", 2], ["created_at", "2018-08-27 16:27:26.430077"], ["updated_at", "2018-08-27 16:27:26.430077"]]
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[35m (43.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+  Rendering usuarios/prueba.html.erb within layouts/admin
+  Rendered usuarios/prueba.html.erb within layouts/admin (0.8ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 109ms (Views: 26.2ms | ActiveRecord: 51.9ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-27 11:29:17 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c4tDb/3csemACzDbUQSzOuplZT1CTEm3j/TLvFpY6Vhh+rCWd0BdFsaoZvclZiH5iSyeci9P9vS8c044le4qvg==", "nombre"=>"Universidad Manuela Beltran", "correo"=>"torre1alta@gmail.com"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "torre1alta@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+Redirected to http://localhost:3000/usuarios/universidad
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 11:29:17 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.0ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 23ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-27 11:30:32 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aG1I6oQTDUEVhHoqhXysIVLKl30gSsnWqNIrEJEJeRh6HLsTDo/hvlMnLAbxHj7iMYNsMk1JdpWbVa6UXr+6/g==", "nombre"=>"Universidad Manuela Beltran", "correo"=>"torre1alta@gmail.com"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "torre1alta@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[36mUsuario Create (0.5ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "tipo", "correo", "estado", "cod_recovery", "validado", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["nombre", "Universidad Manuela Beltran"], ["tipo", 2], ["correo", "torre1alta@gmail.com"], ["estado", 1], ["cod_recovery", 1131], ["validado", 2], ["created_at", "2018-08-27 16:30:32.151787"], ["updated_at", "2018-08-27 16:30:32.151787"]]
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[35m (40.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+  Rendering usuarios/prueba.html.erb within layouts/admin
+  Rendered usuarios/prueba.html.erb within layouts/admin (41.1ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 124ms (Views: 65.8ms | ActiveRecord: 44.2ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 11:36:34 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (7.2ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.2ms)
+Completed 200 OK in 193ms (Views: 191.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 11:36:36 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.9ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 29ms (Views: 27.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-27 11:36:52 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JYRrCc2HRJPkrrTzfQhM6c9JgebxKSUepjCiUY2ZKfo39ZjwRxuobKIN4t8Jat4qrAB6qZwqml2VtyfVQi/qHA==", "nombre"=>"Universidad Manuela Beltran", "correo"=>"torre1alta@gmail.com"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "torre1alta@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[36mUsuario Create (0.5ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "tipo", "correo", "estado", "cod_recovery", "validado", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["nombre", "Universidad Manuela Beltran"], ["tipo", 2], ["correo", "torre1alta@gmail.com"], ["estado", 1], ["cod_recovery", 6283], ["validado", 2], ["created_at", "2018-08-27 16:36:52.334836"], ["updated_at", "2018-08-27 16:36:52.334836"]]
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[35m (49.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+  Rendering usuarios/prueba.html.erb within layouts/admin
+  Rendered usuarios/prueba.html.erb within layouts/admin (47.4ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 261ms (Views: 78.0ms | ActiveRecord: 56.4ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 11:39:06 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (8.1ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 209ms (Views: 208.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 11:39:09 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (2.9ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 36ms (Views: 35.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-27 11:39:31 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"adFvr+Y98s7y/px/4spuvjEbrCStv+onBaSmv0XbfzV7oJxWbKEeMbRdylOWqPx9UlJXa8C8VWQ2IyM7im280w==", "nombre"=>"Universidad Manuela Beltran", "correo"=>"torre1alta@gmail.com"}
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "torre1alta@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[36mUsuario Create (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "tipo", "correo", "estado", "cod_recovery", "validado", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["nombre", "Universidad Manuela Beltran"], ["tipo", 2], ["correo", "torre1alta@gmail.com"], ["estado", 1], ["cod_recovery", 2624], ["validado", 2], ["created_at", "2018-08-27 16:39:31.441684"], ["updated_at", "2018-08-27 16:39:31.441684"]]
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[35m (45.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+  Rendering usuarios/prueba.html.erb within layouts/admin
+  Rendered usuarios/prueba.html.erb within layouts/admin (0.3ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 169ms (Views: 17.7ms | ActiveRecord: 53.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 12:13:11 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.5ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-27 12:13:32 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lcglatGbpRTP4YLp6JkPi6onWzM9TWBS+2RvOVXLmjWHudaTWwdJ64lC1MWc+51IyW6gfFBO3xHI4+q9mn1Z0w==", "nombre"=>"Universidad Manuela Beltran", "correo"=>"torre1alta@gmail.com"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "torre1alta@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[36mUsuario Create (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "tipo", "correo", "estado", "cod_recovery", "validado", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["nombre", "Universidad Manuela Beltran"], ["tipo", 2], ["correo", "torre1alta@gmail.com"], ["estado", 1], ["cod_recovery", 8663], ["validado", 2], ["created_at", "2018-08-27 17:13:32.877033"], ["updated_at", "2018-08-27 17:13:32.877033"]]
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[35m (14.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+UsuarioMailer#valida_usuario: processed outbound mail in 6.3ms
+Completed 500 Internal Server Error in 128ms (ActiveRecord: 20.0ms)
+
+
+  
+NameError (undefined local variable or method `session' for #<UsuarioMailer:0x0000556575436e00>):
+  
+app/mailers/usuario_mailer.rb:6:in `valida_usuario'
+app/controllers/usuarios_controller.rb:22:in `crea_u'
+Started GET "/login/index" for 127.0.0.1 at 2018-08-27 12:13:59 -0500
+Processing by LoginController#index as HTML
+Redirected to http://localhost:3000/adm_panel/index
+Filter chain halted as :loginSessionActive rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-08-27 12:13:59 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (0.2ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 172ms (Views: 170.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/index" for 127.0.0.1 at 2018-08-27 12:14:06 -0500
+Processing by LoginController#index as HTML
+Redirected to http://localhost:3000/adm_panel/index
+Filter chain halted as :loginSessionActive rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-08-27 12:14:06 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (0.3ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 12:14:08 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (6.8ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+Completed 200 OK in 99ms (Views: 95.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 12:20:44 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (8.3ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 207ms (Views: 205.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/index" for 127.0.0.1 at 2018-08-27 12:20:52 -0500
+Processing by LoginController#index as HTML
+Redirected to http://localhost:3000/adm_panel/index
+Filter chain halted as :loginSessionActive rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-08-27 12:20:52 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (0.3ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 31ms (Views: 30.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 12:20:54 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (5.6ms)
+  Rendered layouts/_navbar.html.erb (1.8ms)
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+Completed 200 OK in 81ms (Views: 77.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-27 12:21:02 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"74UmxqbZvCi3O/81QsLArWoRlSWMLFEncWfaJNgI9Sb99NU/LEVQ1/GYqRk2oFJuCVhuauEv7mRC4F+gF742wA==", "nombre"=>"Universidad Manuela Beltran", "correo"=>"cifuentesrfelipe@gmail.com"}
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "cifuentesrfelipe@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+Redirected to http://localhost:3000/usuarios/universidad
+Completed 302 Found in 29ms (ActiveRecord: 8.4ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 12:21:02 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.0ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 21ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-27 12:21:15 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pz76yXgsed8kM7prLohLOiR+1W1UR2VHFgJ43OyZ2h8tTwkw8rCVIGKQ7Eda6tn5RzcuIjlE2gQlhf1YIy8Z+Q==", "nombre"=>"Universidad Manuela Beltran", "correo"=>"torre1alta@gmail.com"}
+  [1m[36mUsuario Load (1.6ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "torre1alta@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+Redirected to http://localhost:3000/usuarios/universidad
+Completed 302 Found in 8ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 12:21:15 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.5ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 29ms (Views: 28.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-27 12:21:47 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lIXhcU/F8yYi+W2bt1J2Hm8nbqtTRgfqXtAohFyuGmaG9BKIxVkf2WRaO7fDMOTdDG6V5D5FuKltV60AkxjZgA==", "nombre"=>"Universidad Manuela Beltran", "correo"=>"torre1alta@gmail.com"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "torre1alta@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[36mUsuario Create (0.6ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "tipo", "correo", "estado", "cod_recovery", "validado", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["nombre", "Universidad Manuela Beltran"], ["tipo", 2], ["correo", "torre1alta@gmail.com"], ["estado", 1], ["cod_recovery", 8685], ["validado", 2], ["created_at", "2018-08-27 17:21:47.948659"], ["updated_at", "2018-08-27 17:21:47.948659"]]
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[35m (38.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+UsuarioMailer#valida_universidad: processed outbound mail in 4.9ms
+Completed 500 Internal Server Error in 148ms (ActiveRecord: 39.3ms)
+
+
+  
+NoMethodError (undefined method `url_route' for #<UsuarioMailer:0x00007fe7ae314028>
+Did you mean?  url_for):
+  
+app/mailers/usuario_mailer.rb:8:in `valida_universidad'
+app/controllers/usuarios_controller.rb:22:in `crea_u'
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-27 12:23:40 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lIXhcU/F8yYi+W2bt1J2Hm8nbqtTRgfqXtAohFyuGmaG9BKIxVkf2WRaO7fDMOTdDG6V5D5FuKltV60AkxjZgA==", "nombre"=>"Universidad Manuela Beltran", "correo"=>"torre1alta@gmail.com"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "torre1alta@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+Redirected to http://localhost:3000/usuarios/universidad
+Completed 302 Found in 16ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 12:23:40 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.1ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 21ms (Views: 20.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-27 12:23:58 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"whqJupGA3+6ufs+Rl1Xt62ZKI//ytwZQ40ppa6b2AwvQa3pDGxwzEejdmb3jN38oBQPYsJ+0uRPQzezvaUDA7Q==", "nombre"=>"Universidad Manuela Beltran", "correo"=>"torre1alta@gmail.com"}
+  [1m[36mUsuario Load (2.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "torre1alta@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[36mUsuario Create (1.5ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "tipo", "correo", "estado", "cod_recovery", "validado", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["nombre", "Universidad Manuela Beltran"], ["tipo", 2], ["correo", "torre1alta@gmail.com"], ["estado", 1], ["cod_recovery", 3969], ["validado", 2], ["created_at", "2018-08-27 17:23:58.920345"], ["updated_at", "2018-08-27 17:23:58.920345"]]
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[35m (34.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+UsuarioMailer#valida_universidad: processed outbound mail in 17.2ms
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 39.3ms)
+
+
+  
+ActionView::MissingTemplate (Missing template usuario_mailer/valida_universidad with "mailer". Searched in:
+  * "usuario_mailer"
+):
+  
+app/mailers/usuario_mailer.rb:13:in `valida_universidad'
+app/controllers/usuarios_controller.rb:22:in `crea_u'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 12:26:02 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.6ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 27ms (Views: 26.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-27 12:26:08 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UO3D60/vlfgqnM2Dxi9lVm+UeKPGLVfu/e+OdTgp+6VCnDASxXN5B2w/m6+yTfeVDN2D7Ksu6K3OaAvx9584Qw==", "nombre"=>"Universidad Manuela Beltran", "correo"=>"torre1alta@gmail.com"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "torre1alta@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[36mUsuario Create (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "tipo", "correo", "estado", "cod_recovery", "validado", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["nombre", "Universidad Manuela Beltran"], ["tipo", 2], ["correo", "torre1alta@gmail.com"], ["estado", 1], ["cod_recovery", 7545], ["validado", 2], ["created_at", "2018-08-27 17:26:08.758467"], ["updated_at", "2018-08-27 17:26:08.758467"]]
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[35m (40.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+UsuarioMailer#valida_universidad: processed outbound mail in 12.7ms
+Completed 500 Internal Server Error in 111ms (ActiveRecord: 46.5ms)
+
+
+  
+ActionView::MissingTemplate (Missing template usuario_mailer/valida_universidad with "mailer". Searched in:
+  * "usuario_mailer"
+):
+  
+app/mailers/usuario_mailer.rb:13:in `valida_universidad'
+app/controllers/usuarios_controller.rb:22:in `crea_u'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 12:29:43 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.6ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-27 12:29:52 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nXhJvamiE12nyP6aGRTBA77gg4DcXWrYj15rT7vQRkmPCbpEIz7/ouFrqLZtdlPA3al4z7Fe1Zu82e7LdGaFrw==", "nombre"=>"Universidad Manuela Beltran", "correo"=>"torre1alta@gmail.com"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "torre1alta@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[36mUsuario Create (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "tipo", "correo", "estado", "cod_recovery", "validado", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["nombre", "Universidad Manuela Beltran"], ["tipo", 2], ["correo", "torre1alta@gmail.com"], ["estado", 1], ["cod_recovery", 6298], ["validado", 2], ["created_at", "2018-08-27 17:29:52.089651"], ["updated_at", "2018-08-27 17:29:52.089651"]]
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[35m (41.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+  Rendering usuario_mailer/valida_usuario.html.erb within layouts/mailer
+  Rendered usuario_mailer/valida_usuario.html.erb within layouts/mailer (1.5ms)
+UsuarioMailer#valida_universidad: processed outbound mail in 1287.7ms
+Sent mail to torre1alta@gmail.com (3820.0ms)
+Date: Mon, 27 Aug 2018 12:29:53 -0500
+From: cifuentesrfelipe@gmail.com
+To: torre1alta@gmail.com
+Message-ID: <5b8435116c2a0_36e52add03502c507325@t01.mail>
+Subject: Bienvenido a PUBLED
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+  =
+
+    <!DOCTYPE html>
+<html lang=3D"en" dir=3D"ltr">
+  <head>
+    <meta charset=3D"utf-8">
+    <title></title>
+  </head>
+  <body style=3D"background-color:#00c3c9; text-align: center">
+    <div>
+        <h1>PUBLED</h1>
+    </div>
+    <div><br><br>
+        Universidad Manuela Beltran:<br><br>
+        Bienvenido a PUBLED, ahora su instituci=C3=B3n educativa podr=C3=A1=
+ compartir el conocimiento con millones de persona.<br><br>
+        Para activar la cuenta y completar el registro, por favor, contin=
+=C3=BAe en el siguiente link
+        <h3><a href=3D"google.com">Completar el registro</a></h3>
+    </div>
+    <div>
+        Gracias
+    </div>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  Rendering usuarios/prueba.html.erb within layouts/admin
+  Rendered usuarios/prueba.html.erb within layouts/admin (1.5ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 5235ms (Views: 46.5ms | ActiveRecord: 47.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 12:37:43 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.6ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 23ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-27 12:38:14 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bUlQz5H3RnluMndSmwXewd++IF49hWKKvzTcqlQ/sGR/OKM2G2uqhiiRIX7vZ0wCvPfbEVCG3cmMs1kum4lzgg==", "nombre"=>"Universidad Manuela Beltran", "correo"=>"torre1alta@gmail.com"}
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "torre1alta@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[36mUsuario Create (0.5ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "tipo", "correo", "estado", "cod_recovery", "validado", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["nombre", "Universidad Manuela Beltran"], ["tipo", 2], ["correo", "torre1alta@gmail.com"], ["estado", 1], ["cod_recovery", 7837], ["validado", 2], ["created_at", "2018-08-27 17:38:14.683488"], ["updated_at", "2018-08-27 17:38:14.683488"]]
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[35m (29.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+Completed 500 Internal Server Error in 202ms (ActiveRecord: 36.8ms)
+
+
+  
+NoMethodError (undefined method `url_route' for #<UsuariosController:0x000055ba0687aa30>
+Did you mean?  url_for):
+  
+app/controllers/usuarios_controller.rb:20:in `crea_u'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 12:43:42 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.5ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 12:44:54 -0500
+  
+ActionController::RoutingError (undefined local variable or method `application' for UsuariosController:Class):
+  
+app/controllers/usuarios_controller.rb:2:in `<class:UsuariosController>'
+app/controllers/usuarios_controller.rb:1:in `<main>'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 12:45:35 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.4ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 20ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-27 12:45:39 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H2tDTumbrSPx4jzCigNx3BNIsk+v1jXJm686UYk0vzENGrC3YwdB3LdBau7+YeMfcAFJAMLVioqoKL/VRoJ81w==", "nombre"=>"Universidad Manuela Beltran", "correo"=>"torre1alta@gmail.com"}
+  [1m[36mUsuario Load (1.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "torre1alta@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:10
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usuarios_controller.rb:20
+  [1m[36mUsuario Create (0.8ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "tipo", "correo", "estado", "cod_recovery", "validado", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["nombre", "Universidad Manuela Beltran"], ["tipo", 2], ["correo", "torre1alta@gmail.com"], ["estado", 1], ["cod_recovery", 3948], ["validado", 2], ["created_at", "2018-08-27 17:45:39.978799"], ["updated_at", "2018-08-27 17:45:39.978799"]]
+  ↳ app/controllers/usuarios_controller.rb:20
+  [1m[35m (19.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usuarios_controller.rb:20
+Completed 500 Internal Server Error in 176ms (ActiveRecord: 40.9ms)
+
+
+  
+NoMethodError (undefined method `url_route' for #<UsuariosController:0x00007fe7addb2800>
+Did you mean?  url_for):
+  
+app/controllers/usuarios_controller.rb:21:in `crea_u'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 12:53:03 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.8ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-27 12:53:09 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6d9g617BgeDZAhjfH1XbwWCLGgl4brQLRPdyfgDApqj7rpMS1F1tH5+hTvNrN0kCA8LhRhVtC0h3cPf6z3ZlTg==", "nombre"=>"Universidad Manuela Beltran", "correo"=>"torre1alta@gmail.com"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "torre1alta@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[36mUsuario Create (0.6ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "tipo", "correo", "estado", "cod_recovery", "validado", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["nombre", "Universidad Manuela Beltran"], ["tipo", 2], ["correo", "torre1alta@gmail.com"], ["estado", 1], ["cod_recovery", 9962], ["validado", 2], ["created_at", "2018-08-27 17:53:09.496319"], ["updated_at", "2018-08-27 17:53:09.496319"]]
+  ↳ app/controllers/usuarios_controller.rb:19
+  [1m[35m (31.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usuarios_controller.rb:19
+  Rendering usuario_mailer/valida_usuario.html.erb within layouts/mailer
+  Rendered usuario_mailer/valida_usuario.html.erb within layouts/mailer (0.6ms)
+UsuarioMailer#valida_universidad: processed outbound mail in 8.1ms
+Sent mail to torre1alta@gmail.com (2763.3ms)
+Date: Mon, 27 Aug 2018 12:53:09 -0500
+From: cifuentesrfelipe@gmail.com
+To: torre1alta@gmail.com
+Message-ID: <5b843a85854d3_36e52add03502b9c7336a@t01.mail>
+Subject: Bienvenido a PUBLED
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+  =
+
+    <!DOCTYPE html>
+<html lang=3D"en" dir=3D"ltr">
+  <head>
+    <meta charset=3D"utf-8">
+    <title></title>
+  </head>
+  <body style=3D"background-color:#00c3c9; text-align: center">
+    <div>
+        <h1>PUBLED</h1>
+    </div>
+    <div><br><br>
+        Universidad Manuela Beltran:<br><br>
+        Bienvenido a PUBLED, ahora su instituci=C3=B3n educativa podr=C3=A1=
+ compartir el conocimiento con millones de persona.<br><br>
+        Para activar la cuenta y completar el registro, por favor, contin=
+=C3=BAe en el siguiente link
+        <h3><a href=3D"http://localhost:3000/usuarios/conf_universidad?in=
+=3D#{cod}_#{id}">Completar el registro</a></h3>
+    </div>
+    <div>
+        Gracias
+    </div>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  Rendering usuarios/prueba.html.erb within layouts/admin
+  Rendered usuarios/prueba.html.erb within layouts/admin (1.5ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 2904ms (Views: 57.0ms | ActiveRecord: 43.4ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 13:00:30 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.7ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 46ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-27 13:07:28 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ie7dunNrZRjZwhgHsY66wNk4D46N8eZqx+0gTyYcsVIzny5D+feJ559hTivF7CgDunH0weDyWSn0aqXL6apytA==", "nombre"=>"Universidad Manuela Beltran", "correo"=>"torre1alta@gmail.com"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "torre1alta@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 5.7ms)
+
+
+  
+TypeError (no implicit conversion of Integer into String):
+  
+app/controllers/application_controller.rb:42:in `update'
+app/controllers/application_controller.rb:42:in `hexdigest'
+app/controllers/application_controller.rb:42:in `encriptaTexto'
+app/controllers/usuarios_controller.rb:19:in `crea_u'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 13:09:42 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.4ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-27 13:10:02 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"75tgzWBWeZOi7TYVUFi201zdYyGePbcUiWM7MduupOv96pM06sqVbOROYDkkOiQQP5SYbvM+CFe65L61FBhnDQ==", "nombre"=>"Universidad Manuela Beltran", "correo"=>"torre1alta@gmail.com"}
+  [1m[36mUsuario Load (1.5ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "torre1alta@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usuarios_controller.rb:20
+  [1m[36mUsuario Create (0.8ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "tipo", "correo", "psw", "estado", "cod_recovery", "validado", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["nombre", "Universidad Manuela Beltran"], ["tipo", 2], ["correo", "torre1alta@gmail.com"], ["psw", "c875e1eae574ed3c138f63c5f8024aa0"], ["estado", 1], ["cod_recovery", 2189], ["validado", 2], ["created_at", "2018-08-27 18:10:02.777750"], ["updated_at", "2018-08-27 18:10:02.777750"]]
+  ↳ app/controllers/usuarios_controller.rb:20
+  [1m[35m (21.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usuarios_controller.rb:20
+  Rendering usuario_mailer/valida_usuario.html.erb within layouts/mailer
+  Rendered usuario_mailer/valida_usuario.html.erb within layouts/mailer (1.7ms)
+UsuarioMailer#valida_universidad: processed outbound mail in 30.2ms
+Sent mail to torre1alta@gmail.com (2296.2ms)
+Date: Mon, 27 Aug 2018 13:10:02 -0500
+From: cifuentesrfelipe@gmail.com
+To: torre1alta@gmail.com
+Message-ID: <5b843e7ad1ff2_36e52add03502b9c734c1@t01.mail>
+Subject: Bienvenido a PUBLED
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+  =
+
+    <!DOCTYPE html>
+<html lang=3D"en" dir=3D"ltr">
+  <head>
+    <meta charset=3D"utf-8">
+    <title></title>
+  </head>
+  <body style=3D"background-color:#bbd700; text-align: center">
+    <div>
+        <h1>PUBLED</h1>
+    </div>
+    <div><br><br>
+        Universidad Manuela Beltran:<br><br>
+        Bienvenido a PUBLED, ahora su instituci=C3=B3n educativa podr=C3=A1=
+ compartir el conocimiento con millones de persona.<br><br>
+        Para activar la cuenta y completar el registro, por favor, contin=
+=C3=BAe en el siguiente link
+        <h3><a href=3D"http://localhost:3000/usuarios/conf_universidad?in=
+=3D#{cod}_#{id}">Completar el registro</a></h3>
+    </div>
+    <div>
+        Gracias
+    </div>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  Rendering usuarios/prueba.html.erb within layouts/admin
+  Rendered usuarios/prueba.html.erb within layouts/admin (1.7ms)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+  Rendered layouts/_sidebar.html.erb (1.4ms)
+Completed 200 OK in 2536ms (Views: 73.9ms | ActiveRecord: 49.5ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-27 13:10:33 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.4ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=" for 127.0.0.1 at 2018-08-27 13:11:24 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/usuarios/conf_universidad"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/usuarios/conf_universidad?in=" for 127.0.0.1 at 2018-08-27 13:14:42 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>""}
+  Rendering usuarios/conf_universidad.html.erb within layouts/admin
+  Rendered usuarios/conf_universidad.html.erb within layouts/admin (0.2ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 21ms (Views: 20.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=" for 127.0.0.1 at 2018-08-27 13:15:37 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>""}
+  Rendering usuarios/conf_universidad.html.erb within layouts/admin
+  Rendered usuarios/conf_universidad.html.erb within layouts/admin (1.2ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+Completed 200 OK in 71ms (Views: 67.8ms | ActiveRecord: 0.0ms)
+
+

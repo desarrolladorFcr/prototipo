@@ -14,10 +14,7 @@ module ApplicationHelper
   def url_route(ruta)
     'http://'+request.host_with_port+"/"+ruta
   end
-  #devuelve el ID del administrador
-  def getAdminId
-    session[:adm_id]
-  end
+  
   #Mensaje de los formularios
   def msj
     if flash[:alert]
@@ -25,12 +22,5 @@ module ApplicationHelper
         val.html_safe
     end
   end
-  #encriptar el cod_recovery
-  def enc_cod(cod)
-      759842136754 * cod
-  end
-  #encriptar #
-  def enc_id(id)
-    759842136754 * id
-  end
+
 end
