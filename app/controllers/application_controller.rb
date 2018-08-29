@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  # saber si hay sesión activa en el login
+  # saber si hay sesión activa en el login, si la hay es enviada al adm_panel/login
   def loginSessionActive
     if session[:adm_id].blank? != true
       redirect_to(controller: 'adm_panel', action: 'index')
@@ -23,14 +23,17 @@ class ApplicationController < ActionController::Base
 
   # encriptar el cod_recovery
   def enc_cod(cod)
-    759_842_136_754 * cod
+    num * cod
   end
 
   # encriptar #
   def enc_id(id)
-    759_842_136_754 * id
+    num * id
   end
-
+  #Desencriptar cod o id
+  def desencriptar(inf)
+    inf/num
+  end
   # formar la url
   def url_actual(ruta)
     'http://' + request.host_with_port + '/' + ruta
@@ -41,5 +44,10 @@ class ApplicationController < ActionController::Base
     md5 = Digest::MD5.new
     val = md5.hexdigest(text)
     val
+  end
+
+  # clave
+  def num
+    num = 759_842_136_754
   end
 end

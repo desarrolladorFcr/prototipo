@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'usuarios/universidad'
   post 'usuarios/crea_u'
   get 'usuarios/conf_universidad'
+  post 'usuario/universidad_data'
   #login
   get 'login/salir'
   #Perfil

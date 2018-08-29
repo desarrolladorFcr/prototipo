@@ -27773,3 +27773,1604 @@ Processing by UsuariosController#conf_universidad as HTML
 Completed 200 OK in 71ms (Views: 67.8ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/login/index" for 127.0.0.1 at 2018-08-28 09:03:38 -0500
+  [1m[35m (40.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/login
+  Rendered login/index.html.erb within layouts/login (5.2ms)
+Completed 200 OK in 530ms (Views: 500.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login/ingreso" for 127.0.0.1 at 2018-08-28 09:04:04 -0500
+Processing by LoginController#ingreso as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K+MzCqIcqIccDzmlMNZXDW390uMSnJuxmPKv8nZqFIHW36snGsVKm1wONSU0Sa0JAIC66I20cdAHVVSz6E4PTw==", "correo"=>"cifuentesrfelipe@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUsuario Load (40.0ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 AND "usuarios"."estado" = $2 AND "usuarios"."validado" = $3 LIMIT $4[0m  [["correo", "cifuentesrfelipe@gmail.com"], ["estado", 1], ["validado", 1], ["LIMIT", 1]]
+  ↳ app/models/usuario.rb:10
+Redirected to http://localhost:3000/adm_panel/index
+Completed 302 Found in 526ms (ActiveRecord: 301.7ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-08-28 09:04:05 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (0.5ms)
+  Rendered layouts/_navbar.html.erb (2.1ms)
+  Rendered layouts/_sidebar.html.erb (2.1ms)
+Completed 200 OK in 195ms (Views: 183.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-28 09:04:09 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.5ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 35ms (Views: 24.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-28 09:09:34 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aqbhDKUanJ95/0P7goE0wjjvBelTd7wpO0nglS53PyrNTi4aoDisnVhnZR91r9zOt24x0EkTJjoMWNUAYBN6ag==", "nombre"=>"Universidad Manuela Beltran", "correo"=>"torre1alta@gmail.com"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "torre1alta@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usuarios_controller.rb:20
+  [1m[36mUsuario Create (60.9ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "tipo", "correo", "psw", "estado", "cod_recovery", "validado", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["nombre", "Universidad Manuela Beltran"], ["tipo", 2], ["correo", "torre1alta@gmail.com"], ["psw", "00a0ec8b67bfd8a68e3ccfc3cad75958"], ["estado", 1], ["cod_recovery", 3513], ["validado", 2], ["created_at", "2018-08-28 14:09:34.184425"], ["updated_at", "2018-08-28 14:09:34.184425"]]
+  ↳ app/controllers/usuarios_controller.rb:20
+  [1m[35m (21.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usuarios_controller.rb:20
+  Rendering usuario_mailer/valida_usuario.html.erb within layouts/mailer
+  Rendered usuario_mailer/valida_usuario.html.erb within layouts/mailer (0.4ms)
+UsuarioMailer#valida_universidad: processed outbound mail in 318.2ms
+Sent mail to torre1alta@gmail.com (911.4ms)
+Date: Tue, 28 Aug 2018 09:09:35 -0500
+From: cifuentesrfelipe@gmail.com
+To: torre1alta@gmail.com
+Message-ID: <5b85579f3acd2_1aa72ab59800def851898@t01.mail>
+Subject: Bienvenido a PUBLED
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+  =
+
+    <!DOCTYPE html>
+<html lang=3D"en" dir=3D"ltr">
+  <head>
+    <meta charset=3D"utf-8">
+    <title></title>
+  </head>
+  <body style=3D"background-color:#bbd700; text-align: center">
+    <div>
+        <h1>PUBLED</h1>
+    </div>
+    <div><br><br>
+        Universidad Manuela Beltran:<br><br>
+        Bienvenido a PUBLED, ahora su instituci=C3=B3n educativa podr=C3=A1=
+ compartir el conocimiento con millones de persona.<br><br>
+        Para activar la cuenta y completar el registro, por favor, contin=
+=C3=BAe en el siguiente link
+        <h3><a href=3D"http://localhost:3000/usuarios/conf_universidad?in=
+=3D2669325426416802_15956684871834">Completar el registro</a></h3>
+    </div>
+    <div>
+        Gracias
+    </div>
+  </body>
+</html>
+
+  </body>
+</html>
+
+Redirected to http://localhost:3000/usuarios/universidad
+Completed 302 Found in 1981ms (ActiveRecord: 88.7ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-28 09:09:36 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (4.6ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 41ms (Views: 37.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-28 09:17:34 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (0.9ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 23ms (Views: 22.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-08-28 09:17:42 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q1ZjlSSvOye5mk8mXYQONGZbBModXiMqFAq2mLjW7SzkvqyDIY0LJZgCacKqquY46dow8wc6uTkjG4MN9rKobA==", "nombre"=>"Universidad Manuela Beltran", "correo"=>"torre1alta@gmail.com"}
+  [1m[36mUsuario Load (1.5ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "torre1alta@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usuarios_controller.rb:20
+  [1m[36mUsuario Create (0.7ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "tipo", "correo", "psw", "estado", "cod_recovery", "validado", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["nombre", "Universidad Manuela Beltran"], ["tipo", 2], ["correo", "torre1alta@gmail.com"], ["psw", "5acfc697f50a3f9424934309059e192c"], ["estado", 1], ["cod_recovery", 4560], ["validado", 2], ["created_at", "2018-08-28 14:17:42.418609"], ["updated_at", "2018-08-28 14:17:42.418609"]]
+  ↳ app/controllers/usuarios_controller.rb:20
+  [1m[35m (44.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usuarios_controller.rb:20
+  Rendering usuario_mailer/valida_usuario.html.erb within layouts/mailer
+  Rendered usuario_mailer/valida_usuario.html.erb within layouts/mailer (0.6ms)
+UsuarioMailer#valida_universidad: processed outbound mail in 35.0ms
+Sent mail to torre1alta@gmail.com (2204.0ms)
+Date: Tue, 28 Aug 2018 09:17:42 -0500
+From: cifuentesrfelipe@gmail.com
+To: torre1alta@gmail.com
+Message-ID: <5b8559867afec_1aa72ab59800dc14519bf@t01.mail>
+Subject: Bienvenido a PUBLED
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+  =
+
+    <!DOCTYPE html>
+<html lang=3D"en" dir=3D"ltr">
+  <head>
+    <meta charset=3D"utf-8">
+    <title></title>
+  </head>
+  <body style=3D"background-color:#bbd700; text-align: center">
+    <div>
+        <h1>PUBLED</h1>
+    </div>
+    <div><br><br>
+        Universidad Manuela Beltran:<br><br>
+        Bienvenido a PUBLED, ahora su instituci=C3=B3n educativa podr=C3=A1=
+ compartir el conocimiento con millones de persona.<br><br>
+        Para activar la cuenta y completar el registro, por favor, contin=
+=C3=BAe en el siguiente link
+        <h3><a href=3D"http://localhost:3000/usuarios/conf_universidad?in=
+=3D3464880143598240_16716527008588">Completar el registro</a></h3>
+    </div>
+    <div>
+        Gracias
+    </div>
+  </body>
+</html>
+
+  </body>
+</html>
+
+Redirected to http://localhost:3000/usuarios/universidad
+Completed 302 Found in 2297ms (ActiveRecord: 46.5ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-28 09:17:44 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (6.6ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 41ms (Views: 38.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:17:54 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  Rendering usuarios/conf_universidad.html.erb within layouts/admin
+  Rendered usuarios/conf_universidad.html.erb within layouts/admin (0.8ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 34ms (Views: 31.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:18:29 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  Rendering usuarios/conf_universidad.html.erb within layouts/admin
+  Rendered usuarios/conf_universidad.html.erb within layouts/admin (0.4ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-28 09:19:30 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (2.8ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 35ms (Views: 34.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:19:33 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `layout' for #<UsuariosController:0x00007feffe285ca8>
+Did you mean?  _layout):
+  
+app/controllers/usuarios_controller.rb:37:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:20:24 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `layout' for #<UsuariosController:0x00007feffda4cc30>
+Did you mean?  _layout):
+  
+app/controllers/usuarios_controller.rb:35:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:20:25 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `layout' for #<UsuariosController:0x00007feffe0cc0d8>
+Did you mean?  _layout):
+  
+app/controllers/usuarios_controller.rb:35:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:21:55 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template /login with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/t01/ruby_py/Publed/app/views"
+  * "/var/lib/gems/2.5.0/gems/devise-4.4.3/app/views"
+):
+  
+app/controllers/usuarios_controller.rb:36:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:23:28 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  Rendering layouts/login.html.erb within layouts/admin
+  Rendered layouts/login.html.erb within layouts/admin (2.4ms)
+  Rendered layouts/_navbar.html.erb (1.3ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 27ms (Views: 26.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:27:25 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  Rendering usuarios/conf_universidad.html.erb
+  Rendered usuarios/conf_universidad.html.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:27:25 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  Rendering usuarios/conf_universidad.html.erb
+  Rendered usuarios/conf_universidad.html.erb (0.6ms)
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-28 09:27:33 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (4.0ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 33ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-28 09:27:34 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (3.4ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 39ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-28 09:27:34 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (4.8ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 64ms (Views: 60.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-28 09:27:34 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.6ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-28 09:27:34 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (3.6ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 72ms (Views: 70.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-28 09:27:34 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.7ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 31ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-28 09:27:35 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.3ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 33ms (Views: 32.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-28 09:27:35 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (2.3ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 35ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-28 09:27:36 -0500
+Processing by PerfilController#index as HTML
+  Rendering perfil/index.html.erb within layouts/perfil
+  Rendered perfil/index.html.erb within layouts/perfil (1.2ms)
+Completed 200 OK in 163ms (Views: 143.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-28 09:27:44 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (3.9ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 39ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-28 09:28:59 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (4.0ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+Completed 200 OK in 57ms (Views: 54.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-28 09:29:16 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.9ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/index" for 127.0.0.1 at 2018-08-28 09:29:18 -0500
+Processing by LoginController#index as HTML
+Redirected to http://localhost:3000/adm_panel/index
+Filter chain halted as :loginSessionActive rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-08-28 09:29:18 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (0.3ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 20ms (Views: 19.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-28 09:29:49 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (2.0ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:31:51 -0500
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/controllers/usuarios_controller.rb:37: syntax error, unexpected ':', expecting keyword_end
+    layout: "login"
+          ^):
+  
+app/controllers/usuarios_controller.rb:37: syntax error, unexpected ':', expecting keyword_end
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:31:52 -0500
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/controllers/usuarios_controller.rb:37: syntax error, unexpected ':', expecting keyword_end
+    layout: "login"
+          ^):
+  
+app/controllers/usuarios_controller.rb:37: syntax error, unexpected ':', expecting keyword_end
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:31:52 -0500
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/controllers/usuarios_controller.rb:37: syntax error, unexpected ':', expecting keyword_end
+    layout: "login"
+          ^):
+  
+app/controllers/usuarios_controller.rb:37: syntax error, unexpected ':', expecting keyword_end
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:31:52 -0500
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/controllers/usuarios_controller.rb:37: syntax error, unexpected ':', expecting keyword_end
+    layout: "login"
+          ^):
+  
+app/controllers/usuarios_controller.rb:37: syntax error, unexpected ':', expecting keyword_end
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:31:53 -0500
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/controllers/usuarios_controller.rb:37: syntax error, unexpected ':', expecting keyword_end
+    layout: "login"
+          ^):
+  
+app/controllers/usuarios_controller.rb:37: syntax error, unexpected ':', expecting keyword_end
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:32:08 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.2ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:32:08 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.6ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:32:09 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (1.1ms)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:32:09 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (1.3ms)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:32:09 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (1.5ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:32:09 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (1.3ms)
+Completed 200 OK in 18ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:32:21 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.2ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:32:21 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (1.3ms)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:32:21 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (1.4ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:32:21 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (1.0ms)
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:32:22 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.4ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:32:34 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.2ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:34:02 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (9.1ms)
+Completed 200 OK in 26ms (Views: 25.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:35:29 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (1.0ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:38:32 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (3.6ms)
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:48:18 -0500
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/controllers/usuarios_controller.rb:35: syntax error, unexpected keyword_in
+    in = params['in'].split('_')
+    ^~
+/home/t01/ruby_py/Publed/app/controllers/usuarios_controller.rb:36: syntax error, unexpected keyword_in
+    @cod = in[0]
+           ^~
+/home/t01/ruby_py/Publed/app/controllers/usuarios_controller.rb:37: syntax error, unexpected keyword_in
+    @id = in[1]
+          ^~):
+  
+app/controllers/usuarios_controller.rb:35: syntax error, unexpected keyword_in
+app/controllers/usuarios_controller.rb:36: syntax error, unexpected keyword_in
+app/controllers/usuarios_controller.rb:37: syntax error, unexpected keyword_in
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:53:26 -0500
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/controllers/usuarios_controller.rb:35: syntax error, unexpected keyword_in
+    in = params['in']
+    ^~
+/home/t01/ruby_py/Publed/app/controllers/usuarios_controller.rb:36: syntax error, unexpected keyword_in
+    val = in.split("_")
+          ^~
+/home/t01/ruby_py/Publed/app/controllers/usuarios_controller.rb:37: syntax error, unexpected keyword_in
+    @cod = in[0]
+           ^~
+/home/t01/ruby_py/Publed/app/controllers/usuarios_controller.rb:38: syntax error, unexpected keyword_in
+    @id = in[1]
+          ^~):
+  
+app/controllers/usuarios_controller.rb:35: syntax error, unexpected keyword_in
+app/controllers/usuarios_controller.rb:36: syntax error, unexpected keyword_in
+app/controllers/usuarios_controller.rb:37: syntax error, unexpected keyword_in
+app/controllers/usuarios_controller.rb:38: syntax error, unexpected keyword_in
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:53:57 -0500
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/controllers/usuarios_controller.rb:36: syntax error, unexpected keyword_in
+    val = in.split("_")
+          ^~
+/home/t01/ruby_py/Publed/app/controllers/usuarios_controller.rb:37: syntax error, unexpected keyword_in
+    @cod = in[0]
+           ^~
+/home/t01/ruby_py/Publed/app/controllers/usuarios_controller.rb:38: syntax error, unexpected keyword_in
+    @id = in[1]
+          ^~):
+  
+app/controllers/usuarios_controller.rb:36: syntax error, unexpected keyword_in
+app/controllers/usuarios_controller.rb:37: syntax error, unexpected keyword_in
+app/controllers/usuarios_controller.rb:38: syntax error, unexpected keyword_in
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 09:54:41 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (1.7ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:07:50 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `/' for "3464880143598240":String):
+  
+app/controllers/application_controller.rb:35:in `desencriptar'
+app/controllers/usuarios_controller.rb:37:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:07:51 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `/' for "3464880143598240":String):
+  
+app/controllers/application_controller.rb:35:in `desencriptar'
+app/controllers/usuarios_controller.rb:37:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:07:52 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `/' for "3464880143598240":String):
+  
+app/controllers/application_controller.rb:35:in `desencriptar'
+app/controllers/usuarios_controller.rb:37:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:07:52 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `/' for "3464880143598240":String):
+  
+app/controllers/application_controller.rb:35:in `desencriptar'
+app/controllers/usuarios_controller.rb:37:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:07:52 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `/' for "3464880143598240":String):
+  
+app/controllers/application_controller.rb:35:in `desencriptar'
+app/controllers/usuarios_controller.rb:37:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:07:52 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `/' for "3464880143598240":String):
+  
+app/controllers/application_controller.rb:35:in `desencriptar'
+app/controllers/usuarios_controller.rb:37:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:07:52 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `/' for "3464880143598240":String):
+  
+app/controllers/application_controller.rb:35:in `desencriptar'
+app/controllers/usuarios_controller.rb:37:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:07:53 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `/' for "3464880143598240":String):
+  
+app/controllers/application_controller.rb:35:in `desencriptar'
+app/controllers/usuarios_controller.rb:37:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:09:07 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (1.3ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:24:16 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.6ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 7.2ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/conf_universidad.html.erb:9: syntax error, unexpected keyword_end
+...eze;@output_buffer.append=( end);@output_buffer.safe_append='
+...                            ^~~
+/home/t01/ruby_py/Publed/app/views/usuarios/conf_universidad.html.erb:14: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/t01/ruby_py/Publed/app/views/usuarios/conf_universidad.html.erb:16: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/usuarios/conf_universidad.html.erb:9: syntax error, unexpected keyword_end
+app/views/usuarios/conf_universidad.html.erb:14: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/usuarios/conf_universidad.html.erb:16: syntax error, unexpected keyword_end, expecting ')'
+app/controllers/usuarios_controller.rb:40:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:24:32 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.6ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/conf_universidad.html.erb:14: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/usuarios/conf_universidad.html.erb:14: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/usuarios_controller.rb:40:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:24:35 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.6ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/conf_universidad.html.erb:14: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/usuarios/conf_universidad.html.erb:14: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/usuarios_controller.rb:40:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:24:35 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.4ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/conf_universidad.html.erb:14: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/usuarios/conf_universidad.html.erb:14: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/usuarios_controller.rb:40:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:24:35 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.4ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/conf_universidad.html.erb:14: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/usuarios/conf_universidad.html.erb:14: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/usuarios_controller.rb:40:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:24:49 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (1.7ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (3.1ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.7ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/conf_universidad.html.erb:14: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/usuarios/conf_universidad.html.erb:14: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/usuarios_controller.rb:40:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:25:00 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (1.7ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (1.6ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.7ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/conf_universidad.html.erb:14: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/usuarios/conf_universidad.html.erb:14: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/usuarios_controller.rb:40:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:25:01 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (1.7ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (2.6ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.7ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/conf_universidad.html.erb:14: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/usuarios/conf_universidad.html.erb:14: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/usuarios_controller.rb:40:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:25:01 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.5ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/conf_universidad.html.erb:14: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/usuarios/conf_universidad.html.erb:14: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/usuarios_controller.rb:40:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:25:01 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.5ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/conf_universidad.html.erb:14: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/usuarios/conf_universidad.html.erb:14: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/usuarios_controller.rb:40:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:25:01 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.8ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.8ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/conf_universidad.html.erb:14: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/usuarios/conf_universidad.html.erb:14: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/usuarios_controller.rb:40:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:26:13 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.6ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/conf_universidad.html.erb:15: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/usuarios/conf_universidad.html.erb:15: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/usuarios_controller.rb:40:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:26:14 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (1.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (2.1ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.2ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/conf_universidad.html.erb:15: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/usuarios/conf_universidad.html.erb:15: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/usuarios_controller.rb:40:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:26:14 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.5ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/conf_universidad.html.erb:15: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/usuarios/conf_universidad.html.erb:15: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/usuarios_controller.rb:40:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:26:14 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.8ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/conf_universidad.html.erb:15: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/usuarios/conf_universidad.html.erb:15: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/usuarios_controller.rb:40:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:26:14 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.8ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.9ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/conf_universidad.html.erb:15: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/usuarios/conf_universidad.html.erb:15: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/usuarios_controller.rb:40:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:26:42 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (1.5ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (1.4ms)
+Completed 200 OK in 24ms (Views: 19.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:26:48 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (1.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (250.3ms)
+Completed 500 Internal Server Error in 257ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `data' for #<#<Class:0x00007ff0094c0e68>:0x00007feffd121868>):
+    3:     <p>Para completar el registro y activar la cuenta de
+    4:       <b>PUBLED,</b>
+    5:       por favor llene el siguiente formulario</p>
+    6:         <%= data.inspect%>
+    7:   </div>
+    8: </div>
+  
+app/views/usuarios/conf_universidad.html.erb:6:in `_app_views_usuarios_conf_universidad_html_erb__4199846533226809_70334359797520'
+app/controllers/usuarios_controller.rb:40:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:26:49 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (1.5ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (331.4ms)
+Completed 500 Internal Server Error in 342ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:26:50 -0500
+  
+ActionView::Template::Error (undefined local variable or method `data' for #<#<Class:0x00007ff0094c0e68>:0x00007ff0040c2a50>):
+    3:     <p>Para completar el registro y activar la cuenta de
+    4:       <b>PUBLED,</b>
+    5:       por favor llene el siguiente formulario</p>
+    6:         <%= data.inspect%>
+    7:   </div>
+    8: </div>
+  
+app/views/usuarios/conf_universidad.html.erb:6:in `_app_views_usuarios_conf_universidad_html_erb__4199846533226809_70334418389520'
+app/controllers/usuarios_controller.rb:40:in `conf_universidad'
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (216.9ms)
+Completed 500 Internal Server Error in 219ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `data' for #<#<Class:0x00007ff0094c0e68>:0x00007ff008acab48>):
+    3:     <p>Para completar el registro y activar la cuenta de
+    4:       <b>PUBLED,</b>
+    5:       por favor llene el siguiente formulario</p>
+    6:         <%= data.inspect%>
+    7:   </div>
+    8: </div>
+  
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:26:50 -0500
+app/views/usuarios/conf_universidad.html.erb:6:in `_app_views_usuarios_conf_universidad_html_erb__4199846533226809_70334457203060'
+app/controllers/usuarios_controller.rb:40:in `conf_universidad'
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (1.9ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (261.3ms)
+Completed 500 Internal Server Error in 266ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `data' for #<#<Class:0x00007ff0094c0e68>:0x00007feffcb6a078>):
+    3:     <p>Para completar el registro y activar la cuenta de
+    4:       <b>PUBLED,</b>
+    5:       por favor llene el siguiente formulario</p>
+    6:         <%= data.inspect%>
+    7:   </div>
+    8: </div>
+  
+app/views/usuarios/conf_universidad.html.erb:6:in `_app_views_usuarios_conf_universidad_html_erb__4199846533226809_70334356976000'
+app/controllers/usuarios_controller.rb:40:in `conf_universidad'
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:27:06 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.5ms)
+Completed 200 OK in 18ms (Views: 4.6ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/usuarios/conf_universidad?in=346488014359_16716527008" for 127.0.0.1 at 2018-08-28 10:38:50 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"346488014359_16716527008"}
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 0], ["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.4ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/usuarios/conf_universidad?in=346488014359_16716527008" for 127.0.0.1 at 2018-08-28 10:39:41 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"346488014359_16716527008"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 0], ["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-28 10:39:42 -0500
+Processing by PerfilController#index as HTML
+  Rendering perfil/index.html.erb within layouts/perfil
+  Rendered perfil/index.html.erb within layouts/perfil (0.3ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:43:04 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.3ms)
+Completed 200 OK in 21ms (Views: 5.1ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:43:05 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (1.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (1.0ms)
+Completed 200 OK in 16ms (Views: 11.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:43:27 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (1.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (1.4ms)
+Completed 200 OK in 25ms (Views: 19.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:44:51 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (1.1ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:45:08 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (1.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (3.0ms)
+Completed 200 OK in 26ms (Views: 21.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:45:09 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (1.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (3.6ms)
+Completed 200 OK in 25ms (Views: 20.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:45:09 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.9ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:45:09 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (3.2ms)
+Completed 200 OK in 26ms (Views: 21.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:45:09 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (1.0ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:45:57 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (1.8ms)
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:46:02 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.6ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_167165270085" for 127.0.0.1 at 2018-08-28 10:46:07 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_167165270085"}
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-28 10:46:07 -0500
+Processing by PerfilController#index as HTML
+  Rendering perfil/index.html.erb within layouts/perfil
+  Rendered perfil/index.html.erb within layouts/perfil (0.3ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:51:05 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.8ms)
+Completed 200 OK in 17ms (Views: 4.2ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:53:01 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.9ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:54:02 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (3.8ms)
+Completed 200 OK in 24ms (Views: 19.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:54:04 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.9ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:54:04 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (3.7ms)
+Completed 200 OK in 24ms (Views: 19.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:54:04 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (2.4ms)
+Completed 200 OK in 14ms (Views: 11.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:54:04 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (3.2ms)
+Completed 200 OK in 22ms (Views: 18.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:54:05 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (1.6ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:54:05 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (3.2ms)
+Completed 200 OK in 24ms (Views: 20.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:54:05 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (3.8ms)
+Completed 200 OK in 24ms (Views: 19.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:54:05 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (3.9ms)
+Completed 200 OK in 24ms (Views: 20.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:54:05 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (1.8ms)
+Completed 200 OK in 13ms (Views: 9.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:54:05 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (3.2ms)
+Completed 200 OK in 24ms (Views: 20.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-28 10:54:46 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (1.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:39
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (3.8ms)
+Completed 200 OK in 27ms (Views: 21.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-29 08:53:50 -0500
+  [1m[35m (40.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PerfilController#index as HTML
+  Rendering perfil/index.html.erb within layouts/perfil
+  Rendered perfil/index.html.erb within layouts/perfil (2.5ms)
+Completed 200 OK in 656ms (Views: 639.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-29 08:54:06 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (8.0ms)
+  Rendered layouts/_navbar.html.erb (2.0ms)
+  Rendered layouts/_sidebar.html.erb (2.3ms)
+Completed 200 OK in 451ms (Views: 405.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-29 08:55:21 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.9ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 23ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-29 08:55:51 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.3ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-29 08:55:52 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (0.8ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-29 08:55:52 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.7ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-29 08:55:53 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (2.4ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 35ms (Views: 33.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-29 08:55:53 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (3.5ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 47ms (Views: 43.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-29 08:55:53 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (0.8ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 26ms (Views: 25.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-29 08:55:53 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (4.3ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+Completed 200 OK in 49ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-29 08:55:53 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (0.6ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-29 08:55:53 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (4.6ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 65ms (Views: 60.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-29 08:55:54 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (0.7ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.4ms)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-29 08:55:54 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (2.9ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+Completed 200 OK in 64ms (Views: 61.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-29 08:55:54 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (0.8ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-29 08:55:54 -0500
+Processing by UsuariosController#universidad as HTML
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (4.3ms)
+  Rendered layouts/_navbar.html.erb (1.8ms)
+  Rendered layouts/_sidebar.html.erb (2.2ms)
+Completed 200 OK in 99ms (Views: 94.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-29 08:58:03 -0500
+Processing by UsuariosController#universidad as HTML
+Redirected to http://localhost:3000/login/index
+Filter chain halted as :sessionActive rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login/index" for 127.0.0.1 at 2018-08-29 08:58:03 -0500
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/login
+  Rendered login/index.html.erb within layouts/login (2.1ms)
+Completed 200 OK in 68ms (Views: 51.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-08-29 08:58:11 -0500
+Processing by UsuariosController#universidad as HTML
+Redirected to http://localhost:3000/login/index
+Filter chain halted as :sessionActive rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login/index" for 127.0.0.1 at 2018-08-29 08:58:11 -0500
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/login
+  Rendered login/index.html.erb within layouts/login (1.6ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/conf_universidad?in=3464880143598240_16716527008588" for 127.0.0.1 at 2018-08-29 08:58:52 -0500
+Processing by UsuariosController#conf_universidad as HTML
+  Parameters: {"in"=>"3464880143598240_16716527008588"}
+  [1m[36mUsuario Load (28.5ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."cod_recovery" = $1 AND "usuarios"."id" = $2 LIMIT $3[0m  [["cod_recovery", 4560], ["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:41
+  Rendering usuarios/conf_universidad.html.erb within layouts/login
+  Rendered usuarios/conf_universidad.html.erb within layouts/login (0.8ms)
+Completed 200 OK in 204ms (Views: 5.5ms | ActiveRecord: 133.3ms)
+
+
