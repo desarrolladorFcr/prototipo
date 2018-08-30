@@ -2,7 +2,11 @@ class UsuariosController < ApplicationController
   before_action :sessionActive, except: [:conf_universidad, :usuario_data]
   layout 'admin', except: :conf_universidad
   def universidad
-
+    sentencia = "select usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto "
+    sentencia += "from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id "
+    sentencia += "where usuarios.tipo= #{UNIV} "
+    @universidades = Usuario.find_by_sql([sentencia])
+    @dataUsuario = DataUsuario
   end
   def profesor
 
@@ -62,6 +66,7 @@ class UsuariosController < ApplicationController
       redirect_to({:action => "universidad"})
     end
   end
+  #Muestra la vista para confirmar universidad y profesor
   def conf_universidad
     reset_session
     @valin = params['in']
@@ -83,7 +88,7 @@ class UsuariosController < ApplicationController
       end
     end
   end
-  #
+  #cambia la validación del usuario y agrega mayor información
   def usuario_data
     psw = params['psw']
     conf = params['confirmar']
