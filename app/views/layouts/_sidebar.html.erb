@@ -10,21 +10,35 @@
 
   <!-- HEADING -->
 
-
   <!-- MENU -->
   <ul class="drawer-menu" id="mainMenu" data-children=".drawer-submenu">
-    <li class="drawer-menu-item">
-      <a href="<%= url_route("adm_panel/index")%>">
-        <i class="material-icons">dashboard</i>
-        <span class="drawer-menu-text">Panel</span>
-      </a>
-    </li>
-    <li class="drawer-menu-item">
-      <a href="<%= url_route('usuarios/universidad')%>">
-        <i class="material-icons">account_balance</i>
-        <span class="drawer-menu-text">Crear universidad</span>
-      </a>
-    </li>
+
+    <% session[:rutas].each do |ruta| %>
+      <% if ruta == '/adm_panel/index'%>
+        <li class="drawer-menu-item">
+          <a href="<%= url_route("adm_panel/index")%>">
+            <i class="material-icons">dashboard</i>
+            <span class="drawer-menu-text">Panel</span>
+          </a>
+        </li>
+      <% end %>
+      <% if ruta == '/usuarios/universidad'%>
+        <li class="drawer-menu-item">
+          <a href="<%= url_route('usuarios/universidad')%>">
+            <i class="material-icons">account_balance</i>
+            <span class="drawer-menu-text">Crear universidad</span>
+          </a>
+        </li>
+      <%end%>
+      <%if ruta == '/usuarios/profesor' %>
+        <li class="drawer-menu-item">
+          <a href="<%= url_route('usuarios/profesor')%>">
+            <i class="material-icons">school</i>
+            <span class="drawer-menu-text">Crear profesor</span>
+          </a>
+        </li>
+      <%end %>
+    <%end%>
     <li class="drawer-menu-item">
       <a href="<%= url_route('login/salir')%>">
         <i class="material-icons">close</i>

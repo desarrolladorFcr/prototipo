@@ -17,9 +17,10 @@ Rails.application.routes.draw do
   post 'login/recuperar'
   #usuarios
   get 'usuarios/universidad'
+  get 'usuarios/profesor'
   post 'usuarios/crea_u'
   get 'usuarios/conf_universidad'
-  post 'usuario/universidad_data'
+  post 'usuarios/usuario_data'
   #login
   get 'login/salir'
   #Perfil

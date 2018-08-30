@@ -3,18 +3,21 @@
     <p>Para completar el registro y activar la cuenta de
       <b>PUBLED,</b>
       por favor llene el siguiente formulario</p>
-      <%= form_tag('/posts') do %>
-      <div style="text-align: left;">
-        <input disabled value="<%= @nombre %>">
-        <label for="">Logo universidad</label>
-        <input type="file" name="foto">
-        <label for="">Contraseña</label>
-        <input type="password" name="psw">
-        <label>Confirme contraseña</label>
-        <input type="confirmar">
-      </div>
-      <button type="submit">Crear</button
-
+      <%= form_tag({:controller => 'usuarios', :action => 'usuario_data'}, options ={multipart: true}) do %>
+        <div style="text-align: left;">
+          <input disabled value="<%= @nombre %>">
+          <label for="">Logo universidad</label>
+          <input type="file" name="foto">
+          <label for="">Contraseña</label>
+          <input type="password" name="psw">
+          <label>Confirme contraseña</label>
+          <input type="password" name="confirmar">
+          <input type="hidden" value="<%= @valin %>" name="in">
+        </div>
+        <button type="submit">Crear</button>
       <% end %>
+      <div style="color:red">
+        <%= @alert%>
+      </div>
   </div>
 </div>

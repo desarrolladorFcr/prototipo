@@ -90,9 +90,9 @@
       </li> -->
       <li class="nav-item nav-divider">
       <li>
-        <a href="#" class="nav-link">
-          <%= session[:adm_nombre]%>
-          <img src="https://st2.depositphotos.com/6589434/9957/v/950/depositphotos_99575742-stock-illustration-pig-muzzle-icon.jpg" class="img-fluid rounded-circle ml-1" width="35" alt="">
+        <a class="nav-link">
+          <%= session[:adm_nombre]%>  <%= session[:apellido]%>
+          <img src="<%= session[:logo]%>" class="img-fluid rounded-circle ml-1" width="35" alt="">
         </a>
       </li>
     </ul>

@@ -1,5 +1,5 @@
 <div class="col-md-12 col-lg-12">
-  Cree un usuario universidad con el nombre de ésta y su correo electrónico, a la universidad le llegara un correo el cual deberá de
+  Cree un usuario profesor con el nombre de éste y su correo electrónico, al profesor le llegara un correo el cual deberá de
   confirmar para activar la cuenta
 </div>
 <br>
@@ -8,7 +8,9 @@
   <%= form_tag({controller: "usuarios", action: "crea_u"}) do%>
     <label >Nombre</label>
     <input name="nombre" class="form-control" required>
-    <label >Correo univeridad</label>
+    <label>apellido</label>
+    <input name="apellido" class="form-control" required>
+    <label >Correo profesor</label>
     <input name="correo" class="form-control" required type="email">
     <br>
       <button type="submit" class="btn btn-success">Crear</button>

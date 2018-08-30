@@ -14,13 +14,15 @@ module ApplicationHelper
   def url_route(ruta)
     'http://'+request.host_with_port+"/"+ruta
   end
-  
+
   #Mensaje de los formularios
   def msj
+    val = "<div class='msj'>"
     if flash[:alert]
-        val = "<br><br><div style='color:red'>"+flash[:alert]+"</div>"
-        val.html_safe
+        val += "<br><br><div style='color:red'>"+flash[:alert]+"</div>"
     end
+    val += "</div>"
+    return val.html_safe
   end
-
+  
 end
