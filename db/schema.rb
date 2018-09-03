@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_29_152502) do
+ActiveRecord::Schema.define(version: 2018_09_01_200713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,7 +98,6 @@ ActiveRecord::Schema.define(version: 2018_08_29_152502) do
     t.bigint "usuarios_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "attachment_data"
     t.index ["usuarios_id"], name: "index_data_usuarios_on_usuarios_id"
   end
 
@@ -147,6 +146,7 @@ ActiveRecord::Schema.define(version: 2018_08_29_152502) do
     t.integer "validado", limit: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "creado_por"
   end
 
   add_foreign_key "actividad_temas", "tema_modulos", column: "tema_modulos_id"

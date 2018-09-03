@@ -9,7 +9,11 @@ class UsuariosController < ApplicationController
     @dataUsuario = DataUsuario
   end
   def profesor
-
+    sentencia = "select usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto, apellido "
+    sentencia += "from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id "
+    sentencia += "where usuarios.tipo= #{PROF} and usuarios.creado_por=#{getAdminId}"
+    @profesores = Usuario.find_by_sql([sentencia])
+    @dataUsuario = DataUsuario
   end
   def crea_u
     correo = params['correo']
@@ -39,6 +43,7 @@ class UsuariosController < ApplicationController
       usuModel.validado = SIN_VALIDAR
       usuModel.cod_recovery = rand(9999)
       usuModel.psw = encriptaTexto(rand(9999999).to_s)
+      usuModel.creado_por = getAdminId
       usuModel.save
       #Guardar los datos del modelo DataUsuario
       dataUsuModel.usuarios_id = usuModel.id

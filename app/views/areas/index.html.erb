@@ -1,29 +1,43 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-12 col-lg-12 text-center">
+  <h3>Áreas</h3>
+</div>
 
-<h1>Areas</h1>
+<% unless @areas.blank? %>
+  <div class="col-md-12 col-lg-12">
 
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Descripcion</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div class="card text-center">
+      <table id="t_area" class="table table-bordered table-responsive">
+        <thead class="thead-dark">
+          <tr>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
 
-  <tbody>
-    <% @areas.each do |area| %>
-      <tr>
-        <td><%= area.nombre %></td>
-        <td><%= area.descripcion %></td>
-        <td><%= link_to 'Show', area %></td>
-        <td><%= link_to 'Edit', edit_area_path(area) %></td>
-        <td><%= link_to 'Destroy', area, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+        <tbody>
+          <% @areas.each do |area| %>
+            <tr>
+              <td><%= area.nombre %></td>
+              <td><%= area.descripcion %></td>
+              <td><%= link_to 'ver', controller: 'areas', action: 'show', id: area.id  %></td>
+              <td><%= link_to 'Editar', edit_area_path(area) %></td>
+              <td><%= link_to 'Eliminar', area, method: :delete, data: { confirm: '¿Está seguro de eliminar el registro' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<%end %>
 <br>
-
-<%= link_to 'New Area', new_area_path %>
+<div class="col-md-12 col-lg-12 text-center">
+  <%= link_to 'Nueva área', controller: 'areas', action: 'new' %>
+</div>
+<script>
+  window.onload = function(){
+    $("#t_area").DataTable();
+  }
+</script>

@@ -76,11 +76,13 @@ class ApplicationController < ActionController::Base
 
   #Lugar permitidos para super administrador
   def adm_acc
-    ['/adm_panel/index', '/usuarios/universidad', '/usuarios/crea_u']
+    ['/adm_panel/index', '/usuarios/universidad', '/usuarios/crea_u', '/areas', '/areas/index',
+    '/areas/create', '/areas/new', '/areas/edit', '/areas/show', '/areas/update', '/areas/destroy']
   end
   #Lugares permitidos para Universidad
   def univ_acc
-    ['/adm_panel/index', '/usuarios/profesor', '/usuarios/crea_u']
+    ['/adm_panel/index', '/usuarios/profesor', '/usuarios/crea_u', '/cursos', '/cursos/create',
+       '/cursos/new', '/cursos/edit', '/cursos/show', '/cursos/update', '/cursos/destroy']
   end
   #Lugares permitidos para Profesor
   def prof_acc

@@ -16,39 +16,41 @@
 </div>
 
 <div class="col-sm-12 col-lg-12">
-  <br><br>
-<div class="card text-center">
-  <table id="u_table" class="table table-bordered table-responsive">
-    <thead class="thead-dark">
-      <tr>
-        <th>Logo</th>
-        <th>Nombre</th>
-        <th>Correo</th>
-        <th>Estado</th>
-        <th>Validado</th>
-        <th>creado</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @universidades.each do |u|%>
+<br><br>
+<% unless @universidades.blank? %>
+  <div class="card text-center">
+    <table id="u_table" class="table table-bordered table-responsive">
+      <thead class="thead-dark">
         <tr>
-          <td>
-            <img src="<%= img_adm(@dataUsuario, u.id, u.foto)%>" width="35" height="35">
-          </td>
-          <td><%= u.nombre%></td>
-          <td><%= u.correo%></td>
-          <td><%= estadoNom(u.estado)%></td>
-          <td><%= validadoNom(u.validado)%></td>
-          <td><%= u.created_at%></td>
+          <th>Logo</th>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Estado</th>
+          <th>Validado</th>
+          <th>creado</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% @universidades.each do |u|%>
+          <tr>
+            <td>
+              <img src="<%= img_adm(@dataUsuario, u.id, u.foto)%>" width="35" height="35">
+            </td>
+            <td><%= u.nombre%></td>
+            <td><%= u.correo%></td>
+            <td><%= estadoNom(u.estado)%></td>
+            <td><%= validadoNom(u.validado)%></td>
+            <td><%= u.created_at%></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-</div>
+  </div>
+<% end %>
 </div>
 <script>
-  window.onload = function(){
-      $("#u_table").DataTable();
-  }
+window.onload = function () {
+  $("#u_table").DataTable();
+}
 </script>

@@ -26,7 +26,7 @@
         <li class="drawer-menu-item">
           <a href="<%= url_route('usuarios/universidad')%>">
             <i class="material-icons">account_balance</i>
-            <span class="drawer-menu-text">Crear universidad</span>
+            <span class="drawer-menu-text">Universidades</span>
           </a>
         </li>
       <%end%>
@@ -34,10 +34,26 @@
         <li class="drawer-menu-item">
           <a href="<%= url_route('usuarios/profesor')%>">
             <i class="material-icons">school</i>
-            <span class="drawer-menu-text">Crear profesor</span>
+            <span class="drawer-menu-text">Profesores</span>
           </a>
         </li>
       <%end %>
+      <%if ruta == '/areas' %>
+      <li class="drawer-menu-item">
+        <a href="<%= url_route('areas')%>">
+          <i class="material-icons">class</i>
+          <span class="drawer-menu-text">Areas</span>
+        </a>
+      </li>
+      <% end %>
+      <% if ruta == '/cursos' %>
+      <li class="drawer-menu-item">
+        <a href="<%= url_route('cursos')%>">
+          <i class="material-icons">library_books</i>
+          <span class="drawer-menu-text">Cursos</span>
+        </a>
+      </li>
+      <% end %>
     <%end%>
     <li class="drawer-menu-item">
       <a href="<%= url_route('login/salir')%>">

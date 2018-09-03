@@ -18,3 +18,15 @@
 @import 'layout';
 @import 'drawer';
 @import "navbar";
+
+.btn-success{
+  background-color: #00c3c9;
+  border-color: #00c3c9;
+}
+
+#error_explanation{
+  color: #FE2E2E;
+}
+#notice{
+  color: #FE2E2E;
+}

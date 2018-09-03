@@ -1,5 +1,11 @@
-<h1>New Curso</h1>
-
+<div class="row">
+  <div class="col-lg-12 colsm-12 text-center">
+    <%= Rails.application.routes.recognize_path(request.referrer)%>
+    <h3>Curso nuevo</h3>
+</div>
 <%= render 'form', curso: @curso %>
-
-<%= link_to 'Back', cursos_path %>
+<div class="col-sm-12 col-lg-12">
+<br>
+<%= link_to 'Atrás', cursos_path %>
+</div>
+</div>

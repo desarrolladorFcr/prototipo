@@ -1,5 +1,5 @@
 class AreasController < ApplicationController
-  before_action :set_area, only: [:show, :edit, :update, :destroy]
+  #(before_action :set_area, only: [:show, :edit, :update, :destroy]
   layout 'admin'
   # GET /areas
   # GET /areas.json
@@ -9,7 +9,9 @@ class AreasController < ApplicationController
 
   # GET /areas/1
   # GET /areas/1.json
-  def show
+  def show()
+    id = params['id']
+    @area = Area.find_by(id: id)
   end
 
   # GET /areas/new
@@ -19,6 +21,8 @@ class AreasController < ApplicationController
 
   # GET /areas/1/edit
   def edit
+    id = params['id']
+    @area = Area.find_by(id: id)
   end
 
   # POST /areas
@@ -28,7 +32,7 @@ class AreasController < ApplicationController
 
     respond_to do |format|
       if @area.save
-        format.html { redirect_to @area, notice: 'Area was successfully created.' }
+        format.html { redirect_to @area, notice: 'Registro creado' }
         format.json { render :show, status: :created, location: @area }
       else
         format.html { render :new }
@@ -41,9 +45,9 @@ class AreasController < ApplicationController
   # PATCH/PUT /areas/1.json
   def update
     respond_to do |format|
+      @area = Area.find_by(id: params[:id])
       if @area.update(area_params)
-        format.html { redirect_to @area, notice: 'Area was successfully updated.' }
-        format.json { render :show, status: :ok, location: @area }
+        format.html { redirect_to @area, notice: 'Registro actualizado' }
       else
         format.html { render :edit }
         format.json { render json: @area.errors, status: :unprocessable_entity }

@@ -1,62 +1,75 @@
-<%= form_with(model: curso, local: true) do |form| %>
+<div class="col-ms-12 col-lg-12" id="curso_form">
+  <%= form_with(model: curso, local: true, options: {multipart: true}, id: 'form_c') do |form| %>
   <% if curso.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(curso.errors.count, "error") %> prohibited this curso from being saved:</h2>
-
       <ul>
-      <% curso.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% curso.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
-
+  <div id="err_prop" style="color:red">
+    <%= msj %>
+  </div>
   <div class="field">
     <%= form.label :nombre %>
-    <%= form.text_field :nombre %>
+    <%= form.text_field :nombre, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :descripcion %>
-    <%= form.text_field :descripcion %>
+    <%= form.text_field :descripcion, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :imagen %>
-    <%= form.text_field :imagen %>
+    <%= form.file_field :imagen, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :incluye %>
-    <%= form.text_field :incluye %>
+    <%= form.text_field :incluye, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :enfocado_a %>
-    <%= form.text_field :enfocado_a %>
+    <%= form.text_field :enfocado_a, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :requisitos %>
-    <%= form.text_field :requisitos %>
+    <%= form.text_field :requisitos, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :tiempo_estimado %>
-    <%= form.text_field :tiempo_estimado %>
+    <%= form.text_field :tiempo_estimado, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :certificable %>
-    <%= form.number_field :certificable %>
+    <label>Certificable</label><br>SI
+    <%= form.check_box :certificable, checked_value: "1"%>
   </div>
-
+  <hr>
   <div class="field">
-    <%= form.label :estado %>
-    <%= form.number_field :estado %>
+    <%= form.label :Area%>
+    <%= form.collection_select(:areas_id, @areas, :id, :nombre, { include_blank: true }, class: 'form-control')%>
   </div>
-
+  <hr>
+  Profesor encargado:
+  <div class="field">
+    <select class="form-control" id="prof" name="prof">
+      <option value="0">Seleccione</option>
+      <% @profesores.each do |p|%>
+        <option value="<%= p.id %>"><%= p.nombre + ' ' + p.apellido+' -- '+p.correo%></option>
+      <% end%>
+    </select>
+  </div>
   <div class="actions">
-    <%= form.submit %>
+    <br>
+    <button type="button" class="btn btn-success" id="btn_curso">Crear</button>
   </div>
 <% end %>
+</div>
+<br>

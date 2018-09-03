@@ -1,6 +1,6 @@
 class CursosController < ApplicationController
   before_action :set_curso, only: [:show, :edit, :update, :destroy]
-  before_action :sessionActive
+  #before_action :sessionActive
   layout 'admin'
   # GET /cursos
   # GET /cursos.json
@@ -16,6 +16,12 @@ class CursosController < ApplicationController
   # GET /cursos/new
   def new
     @curso = Curso.new
+    stn = "select usuarios.id, nombre, apellido, correo from usuarios "
+    stn += "inner join data_usuarios on data_usuarios.usuarios_id=usuarios.id where "
+    stn += "creado_por = #{getAdminId} and validado = #{VALIDADO} and estado = #{ACTIVO} and tipo = #{PROF} "
+    #@profs = ActiveRecord::Base.connection.execute(stn)
+    @profesores = Usuario.find_by_sql([stn])
+    @areas = Area.all();
   end
 
   # GET /cursos/1/edit
@@ -25,13 +31,36 @@ class CursosController < ApplicationController
   # POST /cursos
   # POST /cursos.json
   def create
-    @curso = Curso.new(curso_params)
-
+    @curso = Curso.new
+    @curso.universidad_id = getAdminId
+    @curso.estado = ACTIVO
+    @curso.areas_id = params['curso']['areas_id']
+    @curso.nombre = params['curso']['nombre']
+    @curso.descripcion = params['curso']['descripcion']
+    @curso.imagen = params['curso']['imagen']
+    @curso.incluye = params['curso']['incluye']
+    @curso.enfocado_a = params['curso']['enfocado_a']
+    @curso.requisitos = params['curso']['requisitos']
+    @curso.tiempo_estimado = params['curso']['tiempo_estimado']
+    @curso.certificable = params['curso']['certificable']
     respond_to do |format|
       if @curso.save
-        format.html { redirect_to @curso, notice: 'Curso was successfully created.' }
+        if params['curso']['certificable'] == '1'
+          cursoHasProf = CursosHasProf.new
+          cursoHasProf.cursos_id = @curso.id
+          cursoHasProf.profesor_id = params['prof']
+          cursoHasProf.save
+        end
+
+        format.html { redirect_to @curso, notice: 'El curso fue creado.' }
         format.json { render :show, status: :created, location: @curso }
       else
+        stn = "select usuarios.id, nombre, apellido, correo from usuarios "
+        stn += "inner join data_usuarios on data_usuarios.usuarios_id=usuarios.id where "
+        stn += "creado_por = #{getAdminId} and validado = #{VALIDADO} and estado = #{ACTIVO} and tipo = #{PROF} "
+        #@profs = ActiveRecord::Base.connection.execute(stn)
+        @profesores = Usuario.find_by_sql([stn])
+        @areas = Area.all();
         format.html { render :new }
         format.json { render json: @curso.errors, status: :unprocessable_entity }
       end
