@@ -16,7 +16,7 @@ class UsuariosController < ApplicationController
     @dataUsuario = DataUsuario
   end
   def crea_u
-    
+    render 'prueba'
   end
   #Muestra la vista para confirmar universidad y profesor
   def conf_universidad
