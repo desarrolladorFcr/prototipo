@@ -25,5 +25,4 @@ Rails.application.routes.draw do
   get 'login/salir'
   #Perfil
   get 'perfil/hola'
-  get 'login/usu'
 end
