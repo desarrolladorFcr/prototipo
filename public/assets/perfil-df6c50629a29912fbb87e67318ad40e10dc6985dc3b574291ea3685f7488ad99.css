@@ -1,0 +1,9 @@
+/* line 5, /home/t01/ruby_py/Publed/app/assets/stylesheets/perfil.scss */
+body {
+  background: #bbd700;
+  /* fallback for old browsers */
+  background: linear-gradient(to left, #bbd700, #00c3c9);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
