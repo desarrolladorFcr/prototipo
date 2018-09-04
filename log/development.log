@@ -49637,3 +49637,1998 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-09-03 22:46:23 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PerfilController#index as HTML
+  Rendering perfil/index.html.erb within layouts/perfil
+  Rendered perfil/index.html.erb within layouts/perfil (0.4ms)
+Completed 200 OK in 198ms (Views: 197.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/index" for 127.0.0.1 at 2018-09-03 22:46:29 -0500
+Processing by LoginController#index as HTML
+Redirected to http://localhost:3000/adm_panel/index
+Filter chain halted as :loginSessionActive rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-09-03 22:46:29 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (0.3ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 68ms (Views: 62.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/salir" for 127.0.0.1 at 2018-09-03 22:46:33 -0500
+Processing by LoginController#salir as HTML
+Redirected to http://localhost:3000/login/index?alert=Sesi%C3%B3n+finalizada%2C+vuelve+pronto
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login/index?alert=Sesi%C3%B3n+finalizada%2C+vuelve+pronto" for 127.0.0.1 at 2018-09-03 22:46:33 -0500
+Processing by LoginController#index as HTML
+  Parameters: {"alert"=>"Sesión finalizada, vuelve pronto"}
+  Rendering login/index.html.erb within layouts/login
+  Rendered login/index.html.erb within layouts/login (1.5ms)
+Completed 200 OK in 46ms (Views: 45.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login/ingreso" for 127.0.0.1 at 2018-09-03 22:46:41 -0500
+Processing by LoginController#ingreso as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QLM7k23MIwRR1pCjLRkpNiY7mGg5u6QwZ6/5/vaG2kG4cnnSLVLeqFqTgvi1HKzA+uT+rgl+cviPM1Yr2/T0aQ==", "correo"=>"torre1alta@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 AND "usuarios"."estado" = $2 AND "usuarios"."validado" = $3 LIMIT $4[0m  [["correo", "torre1alta@gmail.com"], ["estado", 1], ["validado", 1], ["LIMIT", 1]]
+  ↳ app/models/usuario.rb:10
+Redirected to http://localhost:3000/login/index?alert=contrase%C3%B1a+incorrecta&correo=torre1alta%40gmail.com
+Completed 302 Found in 20ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/login/index?alert=contrase%C3%B1a+incorrecta&correo=torre1alta%40gmail.com" for 127.0.0.1 at 2018-09-03 22:46:41 -0500
+Processing by LoginController#index as HTML
+  Parameters: {"alert"=>"contraseña incorrecta", "correo"=>"torre1alta@gmail.com"}
+  Rendering login/index.html.erb within layouts/login
+  Rendered login/index.html.erb within layouts/login (1.1ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login/ingreso" for 127.0.0.1 at 2018-09-03 22:46:54 -0500
+Processing by LoginController#ingreso as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dHJWsv5FrEoltm5puwQBxW70JMb75ACpgNg0glGDBw2MsxTzvttR5i7zfDIjAYQzsitCAMsh1mFoRJtXfPEpJQ==", "correo"=>"cifuentesrfelipe@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUsuario Load (2.1ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 AND "usuarios"."estado" = $2 AND "usuarios"."validado" = $3 LIMIT $4[0m  [["correo", "cifuentesrfelipe@gmail.com"], ["estado", 1], ["validado", 1], ["LIMIT", 1]]
+  ↳ app/models/usuario.rb:10
+  [1m[36mDataUsuario Load (1.4ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:18
+Redirected to http://localhost:3000/adm_panel/index
+Completed 302 Found in 88ms (ActiveRecord: 13.1ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-09-03 22:46:54 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (0.6ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 33ms (Views: 29.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 22:46:55 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (1.4ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.4ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (13.8ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 41ms (Views: 32.6ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-09-03 22:47:14 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jkug5C31iMo7BX8UvCu9pN6m9Oql2eSaWNPQV4Qpspa6Ldh4EH0Pt/wmlb+MBSoCTXWSxTXOLCFAt7pups9m/A==", "nombre"=>"Universidad de la vida", "correo"=>"fantasmalogia@hotmail.com"}
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/crea_u"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 22:50:54 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.2ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (11.0ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 44ms (Views: 29.0ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-09-03 22:51:01 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9wgXM7OZNDnOB8i/qHdtK+FJ20QMwP7Pi6EBQAffcB/Dbm+vjhGzRAkkIhSYWfqNcpq9a5zXNnSTxWt5JTmkdQ==", "nombre"=>"Universidad de la vida", "correo"=>"asfdfsf@gmail.com"}
+Completed 404 Not Found in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/crea_u"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started GET "/usuarios/crea_u" for 127.0.0.1 at 2018-09-03 22:52:23 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/usuarios/crea_u"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/login/salir" for 127.0.0.1 at 2018-09-03 22:54:30 -0500
+Processing by LoginController#salir as HTML
+Redirected to http://localhost:3000/login/index?alert=Sesi%C3%B3n+finalizada%2C+vuelve+pronto
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login/index?alert=Sesi%C3%B3n+finalizada%2C+vuelve+pronto" for 127.0.0.1 at 2018-09-03 22:54:30 -0500
+Processing by LoginController#index as HTML
+  Parameters: {"alert"=>"Sesión finalizada, vuelve pronto"}
+  Rendering login/index.html.erb within layouts/login
+  Rendered login/index.html.erb within layouts/login (1.8ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login/ingreso" for 127.0.0.1 at 2018-09-03 22:54:42 -0500
+Processing by LoginController#ingreso as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/jG58yVd3dYOsk6MUmvbTpD5ZXqbAaOp+sHrYXQQ6vEu3WmtSdoOrCpIEKnj6H+oEe4ivTheywQXZLWwkG7Xew==", "correo"=>"torre1alta@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 AND "usuarios"."estado" = $2 AND "usuarios"."validado" = $3 LIMIT $4[0m  [["correo", "torre1alta@gmail.com"], ["estado", 1], ["validado", 1], ["LIMIT", 1]]
+  ↳ app/models/usuario.rb:10
+  [1m[36mDataUsuario Load (0.4ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:18
+Redirected to http://localhost:3000/adm_panel/index
+Completed 302 Found in 6ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-09-03 22:54:42 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (0.3ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/profesor" for 127.0.0.1 at 2018-09-03 22:54:44 -0500
+Processing by UsuariosController#profesor as HTML
+  [1m[36mUsuario Load (1.2ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto, apellido from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 3 and usuarios.creado_por=24[0m
+  ↳ app/controllers/usuarios_controller.rb:15
+  Rendering usuarios/profesor.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.8ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 29], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/profesor.html.erb within layouts/admin (10.6ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 68ms (Views: 49.0ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/usuarios/crea_u" for 127.0.0.1 at 2018-09-03 22:55:26 -0500
+Processing by UsuariosController#crea_u as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VQMY7KmZQRshQFL/kmmk1somqVuc/RRfD5lJpBO0NIjFhixkc32oyGfVNc3pFFzR6tAWsp3cUyWrPOxdLmDheg==", "nombre"=>"Emile ", "apellido"=>"Durkey", "correo"=>"Durkey@gmail.com"}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/crea_u"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started GET "/cursos" for 127.0.0.1 at 2018-09-03 22:55:50 -0500
+Processing by CursosController#index as HTML
+  Rendering cursos/index.html.erb within layouts/admin
+  [1m[36mCurso Load (0.6ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  ↳ app/views/cursos/index.html.erb:8
+  Rendered cursos/index.html.erb within layouts/admin (21.5ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+Completed 200 OK in 49ms (Views: 37.5ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/usuarios/profesor" for 127.0.0.1 at 2018-09-03 22:55:52 -0500
+Processing by UsuariosController#profesor as HTML
+  [1m[36mUsuario Load (3.2ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto, apellido from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 3 and usuarios.creado_por=24[0m
+  ↳ app/controllers/usuarios_controller.rb:15
+  Rendering usuarios/profesor.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (1.5ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 29], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/profesor.html.erb within layouts/admin (18.2ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+Completed 200 OK in 73ms (Views: 60.0ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/login/salir" for 127.0.0.1 at 2018-09-03 22:55:56 -0500
+Processing by LoginController#salir as HTML
+Redirected to http://localhost:3000/login/index?alert=Sesi%C3%B3n+finalizada%2C+vuelve+pronto
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login/index?alert=Sesi%C3%B3n+finalizada%2C+vuelve+pronto" for 127.0.0.1 at 2018-09-03 22:55:56 -0500
+Processing by LoginController#index as HTML
+  Parameters: {"alert"=>"Sesión finalizada, vuelve pronto"}
+  Rendering login/index.html.erb within layouts/login
+  Rendered login/index.html.erb within layouts/login (1.8ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login/ingreso" for 127.0.0.1 at 2018-09-03 22:56:02 -0500
+Processing by LoginController#ingreso as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sgKsoYmdOsSzhhXZmoEcYKati103vhLOeVnE/85i7hb5oLuZhY4OlbAXoKcSeWcyuP/V+5F5dqjieJr24+ObwA==", "correo"=>"torre1alta@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 AND "usuarios"."estado" = $2 AND "usuarios"."validado" = $3 LIMIT $4[0m  [["correo", "torre1alta@gmail.com"], ["estado", 1], ["validado", 1], ["LIMIT", 1]]
+  ↳ app/models/usuario.rb:10
+Redirected to http://localhost:3000/login/index?alert=contrase%C3%B1a+incorrecta&correo=torre1alta%40gmail.com
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/login/index?alert=contrase%C3%B1a+incorrecta&correo=torre1alta%40gmail.com" for 127.0.0.1 at 2018-09-03 22:56:02 -0500
+Processing by LoginController#index as HTML
+  Parameters: {"alert"=>"contraseña incorrecta", "correo"=>"torre1alta@gmail.com"}
+  Rendering login/index.html.erb within layouts/login
+  Rendered login/index.html.erb within layouts/login (1.8ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login/ingreso" for 127.0.0.1 at 2018-09-03 22:56:11 -0500
+Processing by LoginController#ingreso as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uuyL13SG41LkM3gFdhdY436YzqEiOqr+HPfAgj6Se3PxTpzveJXXA+eizXv+7yOxYMqQB4T9zpiH1p6LExMOpQ==", "correo"=>"cifuentesrfelipe@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUsuario Load (1.6ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 AND "usuarios"."estado" = $2 AND "usuarios"."validado" = $3 LIMIT $4[0m  [["correo", "cifuentesrfelipe@gmail.com"], ["estado", 1], ["validado", 1], ["LIMIT", 1]]
+  ↳ app/models/usuario.rb:10
+  [1m[36mDataUsuario Load (1.1ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:18
+Redirected to http://localhost:3000/adm_panel/index
+Completed 302 Found in 14ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-09-03 22:56:11 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (0.6ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+Completed 200 OK in 38ms (Views: 33.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/areas" for 127.0.0.1 at 2018-09-03 22:56:13 -0500
+Processing by AreasController#index as HTML
+  Rendering areas/index.html.erb within layouts/admin
+  [1m[36mArea Load (1.0ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  ↳ app/views/areas/index.html.erb:5
+  Rendered areas/index.html.erb within layouts/admin (27.1ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 90ms (Views: 52.3ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/areas/new" for 127.0.0.1 at 2018-09-03 22:56:16 -0500
+Processing by AreasController#new as HTML
+  Rendering areas/new.html.erb within layouts/admin
+  Rendered areas/_form.html.erb (38.3ms)
+  Rendered areas/new.html.erb within layouts/admin (50.8ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  Rendered layouts/_sidebar.html.erb (1.0ms)
+Completed 200 OK in 117ms (Views: 94.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/areas" for 127.0.0.1 at 2018-09-03 22:56:28 -0500
+Processing by AreasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DXUAmqMpFmfHM0Tn10y/kEObLLplp3s8sKabjH8Hco6xbsm507eRPAP61QqzCxKC5yHpVgPAhg+reLhPwVROPQ==", "area"=>{"nombre"=>"cocina", "descripcion"=>"Preparación de alimentos"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/areas_controller.rb:34
+  [1m[36mArea Create (95.6ms)[0m  [1m[32mINSERT INTO "areas" ("nombre", "descripcion", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["nombre", "cocina"], ["descripcion", "Preparación de alimentos"], ["created_at", "2018-09-04 03:56:28.646926"], ["updated_at", "2018-09-04 03:56:28.646926"]]
+  ↳ app/controllers/areas_controller.rb:34
+  [1m[35m (21.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/areas_controller.rb:34
+Redirected to http://localhost:3000/areas/4
+Completed 302 Found in 127ms (ActiveRecord: 117.2ms)
+
+
+Started GET "/areas/4" for 127.0.0.1 at 2018-09-03 22:56:28 -0500
+Processing by AreasController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mArea Load (1.1ms)[0m  [1m[34mSELECT  "areas".* FROM "areas" WHERE "areas"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/areas_controller.rb:14
+  Rendering areas/show.html.erb within layouts/admin
+  Rendered areas/show.html.erb within layouts/admin (3.7ms)
+  Rendered layouts/_navbar.html.erb (2.1ms)
+  Rendered layouts/_sidebar.html.erb (2.8ms)
+Completed 200 OK in 156ms (Views: 92.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:00:54 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.4ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (13.2ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 59ms (Views: 40.2ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:00:55 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (1.3ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.3ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (4.4ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+Completed 200 OK in 51ms (Views: 45.4ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/usuarios/crea_usuario" for 127.0.0.1 at 2018-09-03 23:01:19 -0500
+Processing by UsuariosController#crea_usuario as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yAYlebk9VKixDII/AujnuzD62GH/ReMfPX56eBEvSrn5uDSMWVNDXA2s8Bwr71fRXh4VVeo16R7ycmuEkrPFZQ==", "nombre"=>"Universidad de la vida", "correo"=>"pfr@gmail.com"}
+Completed 404 Not Found in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/crea_usuario"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:01:33 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (2.0ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.5ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (4.4ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 32ms (Views: 26.2ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/usuarios/crea_usuario" for 127.0.0.1 at 2018-09-03 23:02:20 -0500
+Processing by UsuariosController#crea_usuario as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4mcJa7Rin1EcmHTStx1xZqmaNQ5FlM+LdMKlA1jwPTrT2RieVAyIpaA4BvGeGsEMx374OlDkxYq7zrT/22yy5g==", "nombre"=>"Universidad de la vida", "correo"=>"pfr@gmail.com"}
+Completed 404 Not Found in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/crea_usuario"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:04:34 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (2.4ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.6ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (4.1ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+Completed 200 OK in 33ms (Views: 27.3ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/usuarios/crea_usuario" for 127.0.0.1 at 2018-09-03 23:04:47 -0500
+Processing by UsuariosController#crea_usuario as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4gkvD7La0pky7JJwUByY9ty75gJOXxYjjW/qe+zMOYXTtz76UrTFbY5M4FN5Gyicsl8rNlsvHCJCY/uHb1C2WQ==", "nombre"=>"Universidad de la vida", "correo"=>"pfr@gmail.com"}
+Completed 404 Not Found in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/crea_usuario"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started POST "/__web_console/repl_sessions/15920fc20e55896eb36c8d15d7df89e4/trace" for 127.0.0.1 at 2018-09-03 23:05:26 -0500
+Started POST "/__web_console/repl_sessions/15920fc20e55896eb36c8d15d7df89e4/trace" for 127.0.0.1 at 2018-09-03 23:05:27 -0500
+Started POST "/__web_console/repl_sessions/15920fc20e55896eb36c8d15d7df89e4/trace" for 127.0.0.1 at 2018-09-03 23:05:27 -0500
+Started POST "/__web_console/repl_sessions/15920fc20e55896eb36c8d15d7df89e4/trace" for 127.0.0.1 at 2018-09-03 23:05:27 -0500
+Started POST "/__web_console/repl_sessions/15920fc20e55896eb36c8d15d7df89e4/trace" for 127.0.0.1 at 2018-09-03 23:05:46 -0500
+Started POST "/__web_console/repl_sessions/15920fc20e55896eb36c8d15d7df89e4/trace" for 127.0.0.1 at 2018-09-03 23:05:47 -0500
+Started POST "/__web_console/repl_sessions/15920fc20e55896eb36c8d15d7df89e4/trace" for 127.0.0.1 at 2018-09-03 23:05:47 -0500
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:06:38 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.2ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (12.9ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 58ms (Views: 36.1ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:06:40 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (1.0ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.5ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (4.7ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+Completed 200 OK in 35ms (Views: 29.6ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/usuarios/crea_usuario" for 127.0.0.1 at 2018-09-03 23:06:44 -0500
+Processing by UsuariosController#crea_usuario as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OO6Xje84yRjfexouOEM3fyLKjUIyqdc2XHlIB/M43HoJUIZ4D1be7GPbaA0RRIcVTC5AdifZ3TeTdVn7cKRTpg==", "nombre"=>"Maria", "correo"=>"pfr@gmail.com"}
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/crea_usuario"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:08:28 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.3ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (12.5ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 56ms (Views: 36.1ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:08:30 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (1.0ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.4ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (5.1ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+Completed 200 OK in 34ms (Views: 28.8ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/usuarios/prueba" for 127.0.0.1 at 2018-09-03 23:08:34 -0500
+Processing by UsuariosController#prueba as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7uJcvb0phBaDPtQSW1Y5n+WXf4LrtTgna2JfI8YxdOk1wGcqL384AEgEeKMrqEN7pFAziUcce5ZZNvllp0EKCQ==", "nombre"=>"Maria", "correo"=>"asfdfsf@gmail.com"}
+Completed 404 Not Found in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/prueba"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:08:40 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.4ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (5.0ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+Completed 200 OK in 33ms (Views: 28.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:09:42 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (3.4ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.8ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+Completed 200 OK in 44ms (Views: 33.4ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/usuarios/prueba" for 127.0.0.1 at 2018-09-03 23:09:47 -0500
+Processing by UsuariosController#prueba as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"thSc8zHODtIONgsYJ+rp6oBqebgLIX+ENYMbbRrvMA5tNqdko5iyxMUMp6lXFJMOwa01s6eIPDUH170re59O7g==", "nombre"=>"Universidad de la vida", "correo"=>"pfr@gmail.com"}
+Completed 404 Not Found in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/prueba"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:09:50 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (1.2ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.1ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 29ms (Views: 24.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:09:52 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.7ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 33ms (Views: 28.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/usuarios/prueba" for 127.0.0.1 at 2018-09-03 23:09:56 -0500
+Processing by UsuariosController#prueba as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FzMinbDjnyC+aWkER3PnsH3BjYFmVuHWgCrOWYes1WzMERkKIrUjNnVTxbU3jZ1UPAbBisr/omeyfmgf5tyrjA==", "nombre"=>"Pedro páramo", "correo"=>"fantasmalogia@hotmail.com"}
+Completed 404 Not Found in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/prueba"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:10:01 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.3ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 31ms (Views: 26.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:10:49 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.5ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 49ms (Views: 36.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/usuarios/prueba?utf8=%E2%9C%93&nombre=Universidad+Manuela+Beltran&correo=pfr%40gmail.com" for 127.0.0.1 at 2018-09-03 23:10:56 -0500
+Processing by UsuariosController#prueba as HTML
+  Parameters: {"utf8"=>"✓", "nombre"=>"Universidad Manuela Beltran", "correo"=>"pfr@gmail.com"}
+Redirected to http://localhost:3000/adm_panel/index
+Filter chain halted as :sessionActive rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-09-03 23:10:56 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (15.6ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+Completed 200 OK in 45ms (Views: 41.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:12:41 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.5ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+Completed 200 OK in 37ms (Views: 24.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/usuarios/crea_usuario" for 127.0.0.1 at 2018-09-03 23:12:53 -0500
+Processing by UsuariosController#crea_usuario as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v5L9xDD+AdZHz3eBrHoMOiaKptrigHqGRYE7BJU4g1+OLOwx0JAWIvtvBaKFfbxQSG5r7vfwcIeKjSr4FqQMgw==", "nombre"=>"Maria", "correo"=>"pfr@gmail.com"}
+Completed 404 Not Found in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/crea_usuario"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:13:01 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (1.2ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.6ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+Completed 200 OK in 38ms (Views: 33.9ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/usuarios/crea_usuario" for 127.0.0.1 at 2018-09-03 23:13:47 -0500
+Processing by UsuariosController#crea_usuario as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XDywrcmOxjibUI54odPstel+PBgxV4wI5/rl0ulWG+ZtgqFYKeDRzCfw/FuI1Fzfh5rxLCQnhgko9vQuasqUOg==", "nombre"=>"Maria", "correo"=>"pfr@gmail.com"}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/crea_usuario"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started POST "/usuarios/crea_usuario" for 127.0.0.1 at 2018-09-03 23:16:54 -0500
+Processing by UsuariosController#crea_usuario as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XDywrcmOxjibUI54odPstel+PBgxV4wI5/rl0ulWG+ZtgqFYKeDRzCfw/FuI1Fzfh5rxLCQnhgko9vQuasqUOg==", "nombre"=>"Maria", "correo"=>"pfr@gmail.com"}
+Completed 404 Not Found in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/crea_usuario"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started POST "/usuarios/crea_usuario" for 127.0.0.1 at 2018-09-03 23:16:56 -0500
+Processing by UsuariosController#crea_usuario as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XDywrcmOxjibUI54odPstel+PBgxV4wI5/rl0ulWG+ZtgqFYKeDRzCfw/FuI1Fzfh5rxLCQnhgko9vQuasqUOg==", "nombre"=>"Maria", "correo"=>"pfr@gmail.com"}
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/crea_usuario"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:16:57 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.4ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+Completed 200 OK in 63ms (Views: 32.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:16:59 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.7ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 32ms (Views: 28.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/usuarios/crea_usuario" for 127.0.0.1 at 2018-09-03 23:17:17 -0500
+Processing by UsuariosController#crea_usuario as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o85q2grAmGOx3wsDiiBHZKR6sLsxLZZdhHejrnBYma6ScHsv6q6Plw1/eSCjJ/cOyp59jyRdnFxLe7JS88QWcg==", "nombre"=>"Maria", "correo"=>"asfdfsf@gmail.com"}
+Completed 404 Not Found in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/crea_usuario"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:18:20 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (3.0ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"crea_usuari", :controller=>"usuarios"}):
+    4: <br>
+    5: 
+    6: <div class="col-md-12 col-lg-12">
+    7:   <%= form_tag({controller: "usuarios", action: "crea_usuari"}, method: "post") do |p|%>
+    8:   <label>Nombre</label>
+    9:   <input name="nombre" class="form-control" required="required">
+   10:   <label >Correo univeridad</label>
+  
+app/views/usuarios/universidad.html.erb:7:in `_app_views_usuarios_universidad_html_erb___3925032728454111070_70075529794060'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:18:25 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (1.1ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (2.8ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"crea_usuari", :controller=>"usuarios"}):
+    4: <br>
+    5: 
+    6: <div class="col-md-12 col-lg-12">
+    7:   <%= form_tag({controller: "usuarios", action: "crea_usuari"}, method: "post") do |p|%>
+    8:   <label>Nombre</label>
+    9:   <input name="nombre" class="form-control" required="required">
+   10:   <label >Correo univeridad</label>
+  
+app/views/usuarios/universidad.html.erb:7:in `_app_views_usuarios_universidad_html_erb___3925032728454111070_70075445828800'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:18:26 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.9ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"crea_usuari", :controller=>"usuarios"}):
+    4: <br>
+    5: 
+    6: <div class="col-md-12 col-lg-12">
+    7:   <%= form_tag({controller: "usuarios", action: "crea_usuari"}, method: "post") do |p|%>
+    8:   <label>Nombre</label>
+    9:   <input name="nombre" class="form-control" required="required">
+   10:   <label >Correo univeridad</label>
+  
+app/views/usuarios/universidad.html.erb:7:in `_app_views_usuarios_universidad_html_erb___3925032728454111070_70075450323840'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:18:27 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (2.6ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"crea_usuari", :controller=>"usuarios"}):
+    4: <br>
+    5: 
+    6: <div class="col-md-12 col-lg-12">
+    7:   <%= form_tag({controller: "usuarios", action: "crea_usuari"}, method: "post") do |p|%>
+    8:   <label>Nombre</label>
+    9:   <input name="nombre" class="form-control" required="required">
+   10:   <label >Correo univeridad</label>
+  
+app/views/usuarios/universidad.html.erb:7:in `_app_views_usuarios_universidad_html_erb___3925032728454111070_46955127634300'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:18:27 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.1ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"crea_usuari", :controller=>"usuarios"}):
+    4: <br>
+    5: 
+    6: <div class="col-md-12 col-lg-12">
+    7:   <%= form_tag({controller: "usuarios", action: "crea_usuari"}, method: "post") do |p|%>
+    8:   <label>Nombre</label>
+    9:   <input name="nombre" class="form-control" required="required">
+   10:   <label >Correo univeridad</label>
+  
+app/views/usuarios/universidad.html.erb:7:in `_app_views_usuarios_universidad_html_erb___3925032728454111070_70075527266760'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:18:28 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.7ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"crea_usuari", :controller=>"usuarios"}):
+    4: <br>
+    5: 
+    6: <div class="col-md-12 col-lg-12">
+    7:   <%= form_tag({controller: "usuarios", action: "crea_usuari"}, method: "post") do |p|%>
+    8:   <label>Nombre</label>
+    9:   <input name="nombre" class="form-control" required="required">
+   10:   <label >Correo univeridad</label>
+  
+app/views/usuarios/universidad.html.erb:7:in `_app_views_usuarios_universidad_html_erb___3925032728454111070_70075529535400'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:18:52 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (1.9ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (4.3ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_sidebar.html.erb (1.0ms)
+Completed 200 OK in 77ms (Views: 68.9ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/usuarios/crea_usuario" for 127.0.0.1 at 2018-09-03 23:19:02 -0500
+Processing by UsuariosController#crea_usuario as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I7oYs3tR8B0gjXeF+JGsIzecmY/r/QxwNFbRvwnKMtESBAlGmz/n6ZwtBabRlhxJWXhUu/6NBnH7WsBDila9DQ==", "nombre"=>"Anita Suarez", "correo"=>"pfr@gmail.com"}
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/crea_usuario"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started GET "/usuarios/usuario_data" for 127.0.0.1 at 2018-09-03 23:26:30 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/usuarios/usuario_data"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/login/ingreso" for 127.0.0.1 at 2018-09-03 23:27:06 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/login/ingreso"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/login/index" for 127.0.0.1 at 2018-09-03 23:27:20 -0500
+Processing by LoginController#index as HTML
+Redirected to http://localhost:3000/adm_panel/index
+Filter chain halted as :loginSessionActive rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-09-03 23:27:20 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (0.3ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/index" for 127.0.0.1 at 2018-09-03 23:27:21 -0500
+Processing by LoginController#index as HTML
+Redirected to http://localhost:3000/adm_panel/index
+Filter chain halted as :loginSessionActive rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-09-03 23:27:21 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (0.4ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/areas" for 127.0.0.1 at 2018-09-03 23:27:26 -0500
+Processing by AreasController#index as HTML
+  Rendering areas/index.html.erb within layouts/admin
+  [1m[36mArea Load (1.0ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  ↳ app/views/areas/index.html.erb:5
+  Rendered areas/index.html.erb within layouts/admin (24.5ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 54ms (Views: 39.8ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:27:30 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (6.1ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (1.5ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (59.6ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  Rendered layouts/_sidebar.html.erb (1.3ms)
+Completed 200 OK in 120ms (Views: 87.1ms | ActiveRecord: 24.5ms)
+
+
+Started POST "/usuarios/crea_usuario" for 127.0.0.1 at 2018-09-03 23:27:42 -0500
+Processing by UsuariosController#crea_usuario as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZF6/sLpd6qn32Qr3kmMraC3UWEjOOfrmV20Jn5M/fvtV4K5FWjP9XUt5eNS7ZJsCQzCVfNtJ8OeYYRhjEKPxJw==", "nombre"=>"Pedro páramo", "correo"=>"fantasmalogia@hotmail.com"}
+Completed 404 Not Found in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/crea_usuario"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:29:56 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (1.5ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.5ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (4.4ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+Completed 200 OK in 39ms (Views: 35.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/areas" for 127.0.0.1 at 2018-09-03 23:35:06 -0500
+Processing by AreasController#index as HTML
+  Rendering areas/index.html.erb within layouts/admin
+  [1m[36mArea Load (1.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  ↳ app/views/areas/index.html.erb:5
+  Rendered areas/index.html.erb within layouts/admin (17.9ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  Rendered layouts/_sidebar.html.erb (1.4ms)
+Completed 200 OK in 96ms (Views: 91.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:35:11 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (4.4ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (1.2ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (17.3ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+Completed 200 OK in 76ms (Views: 61.9ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-09-03 23:35:13 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (2.3ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  Rendered layouts/_sidebar.html.erb (1.2ms)
+Completed 200 OK in 67ms (Views: 60.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:37:46 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (2.5ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (27.8ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 2.5ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/universidad.html.erb:62: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/usuarios/universidad.html.erb:62: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:38:05 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (1.5ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (2.1ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.5ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/universidad.html.erb:62: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/usuarios/universidad.html.erb:62: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:38:08 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (3.3ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (4.9ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 3.3ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/universidad.html.erb:62: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/usuarios/universidad.html.erb:62: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:38:30 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (3.0ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (5.1ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 3.0ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/universidad.html.erb:60: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/usuarios/universidad.html.erb:60: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:38:31 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (1.0ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.6ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.0ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/universidad.html.erb:60: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/usuarios/universidad.html.erb:60: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:38:31 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (1.3ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/universidad.html.erb:60: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/usuarios/universidad.html.erb:60: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:38:32 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (0.8ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/universidad.html.erb:60: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/usuarios/universidad.html.erb:60: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:38:32 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (0.9ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/universidad.html.erb:60: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/usuarios/universidad.html.erb:60: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:38:32 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (0.7ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.9ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/universidad.html.erb:60: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/usuarios/universidad.html.erb:60: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/login/index" for 127.0.0.1 at 2018-09-03 23:38:40 -0500
+Processing by LoginController#index as HTML
+Redirected to http://localhost:3000/adm_panel/index
+Filter chain halted as :loginSessionActive rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-09-03 23:38:40 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (0.4ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+Completed 200 OK in 46ms (Views: 44.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:38:42 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (2.8ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (5.6ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 2.8ms)
+
+
+  
+SyntaxError (/home/t01/ruby_py/Publed/app/views/usuarios/universidad.html.erb:60: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/usuarios/universidad.html.erb:60: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:39:24 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (2.5ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (16.4ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 2.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `submit' for nil:NilClass):
+    3: </div>
+    4: <br>
+    5: <%= form_tag({controller: "usuarios", action: "crea_usuario"}, method: "post") do |p| %>
+    6:   <%= p.submit%>
+    7: <% end %>
+    8: 
+    9: <div class="col-md-12 col-lg-12">
+  
+app/views/usuarios/universidad.html.erb:6:in `block in _app_views_usuarios_universidad_html_erb___3925032728454111070_70075449406660'
+app/views/usuarios/universidad.html.erb:5:in `_app_views_usuarios_universidad_html_erb___3925032728454111070_70075449406660'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:39:25 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (1.2ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (5.6ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `submit' for nil:NilClass):
+    3: </div>
+    4: <br>
+    5: <%= form_tag({controller: "usuarios", action: "crea_usuario"}, method: "post") do |p| %>
+    6:   <%= p.submit%>
+    7: <% end %>
+    8: 
+    9: <div class="col-md-12 col-lg-12">
+  
+app/views/usuarios/universidad.html.erb:6:in `block in _app_views_usuarios_universidad_html_erb___3925032728454111070_46955119252400'
+app/views/usuarios/universidad.html.erb:5:in `_app_views_usuarios_universidad_html_erb___3925032728454111070_46955119252400'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:39:25 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (2.2ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `submit' for nil:NilClass):
+    3: </div>
+    4: <br>
+    5: <%= form_tag({controller: "usuarios", action: "crea_usuario"}, method: "post") do |p| %>
+    6:   <%= p.submit%>
+    7: <% end %>
+    8: 
+    9: <div class="col-md-12 col-lg-12">
+  
+app/views/usuarios/universidad.html.erb:6:in `block in _app_views_usuarios_universidad_html_erb___3925032728454111070_70075524565300'
+app/views/usuarios/universidad.html.erb:5:in `_app_views_usuarios_universidad_html_erb___3925032728454111070_70075524565300'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:39:25 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (2.9ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `submit' for nil:NilClass):
+    3: </div>
+    4: <br>
+    5: <%= form_tag({controller: "usuarios", action: "crea_usuario"}, method: "post") do |p| %>
+    6:   <%= p.submit%>
+    7: <% end %>
+    8: 
+    9: <div class="col-md-12 col-lg-12">
+  
+app/views/usuarios/universidad.html.erb:6:in `block in _app_views_usuarios_universidad_html_erb___3925032728454111070_70075528485120'
+app/views/usuarios/universidad.html.erb:5:in `_app_views_usuarios_universidad_html_erb___3925032728454111070_70075528485120'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:40:33 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (2.6ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (1.5ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (17.2ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+Completed 200 OK in 73ms (Views: 61.8ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/usuarios/crea_usuario" for 127.0.0.1 at 2018-09-03 23:40:37 -0500
+Processing by UsuariosController#crea_usuario as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LfjYodvqeg3jgrI0l4IifdQUgXI3kBf7UiWwx02LvwYcRslUO4Rt+V8iwBe+hZIXuvBMRiLgHfqdKaE7zhcw2g==", "commit"=>"Enviar"}
+Completed 404 Not Found in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/crea_usuario"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:40:42 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (1.2ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.4ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (3.3ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+Completed 200 OK in 30ms (Views: 26.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/usuarios/crea_usuario" for 127.0.0.1 at 2018-09-03 23:40:43 -0500
+Processing by UsuariosController#crea_usuario as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LDRGXyBg/BD9Ada4v7aAlHhzj+tJwYywmB6T6FX5CVkdileqwA7r5EGhpJuWsTD+FpdC31yxhrFXEoIU1mWGhQ==", "commit"=>"Enviar"}
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/crea_usuario"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:40:55 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (1.9ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.5ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (4.6ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+Completed 200 OK in 33ms (Views: 28.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-03 23:40:56 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (2.5ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (3.1ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (18.3ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+Completed 200 OK in 84ms (Views: 70.8ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/login/index" for 127.0.0.1 at 2018-09-04 15:29:55 -0500
+  [1m[35m (36.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/login
+  Rendered login/index.html.erb within layouts/login (2.7ms)
+Completed 200 OK in 718ms (Views: 689.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login/ingreso" for 127.0.0.1 at 2018-09-04 15:30:23 -0500
+Processing by LoginController#ingreso as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FBHaZdOT6nnCRzPiUCiytJJRBhluPMfwPlMETawC+MbsgQTfP6G1gmx2lcM1Kk/6b2Wy2djs/JK/CQIxBOpC0g==", "correo"=>"cifuentesrfelipe@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUsuario Load (39.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 AND "usuarios"."estado" = $2 AND "usuarios"."validado" = $3 LIMIT $4[0m  [["correo", "cifuentesrfelipe@gmail.com"], ["estado", 1], ["validado", 1], ["LIMIT", 1]]
+  ↳ app/models/usuario.rb:10
+  [1m[36mDataUsuario Load (31.8ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:18
+Redirected to http://localhost:3000/adm_panel/index
+Completed 302 Found in 431ms (ActiveRecord: 261.1ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-09-04 15:30:23 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (1.2ms)
+  Rendered layouts/_navbar.html.erb (1.6ms)
+  Rendered layouts/_sidebar.html.erb (1.6ms)
+Completed 200 OK in 348ms (Views: 290.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-09-04 15:30:26 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (1.4ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (1.2ms)
+Completed 200 OK in 47ms (Views: 41.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-04 15:30:27 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (33.1ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (1.7ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (43.3ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 113ms (Views: 57.7ms | ActiveRecord: 47.9ms)
+
+
+Started POST "/usuarios/crea_usuario" for 127.0.0.1 at 2018-09-04 15:31:04 -0500
+Processing by UsuariosController#crea_usuario as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tCH1dY7uPaqlbFOalbB/dkL8vCQm3FHbWVvbPaj1sVoZfuUoonpcZUVKZhXVJ9uGqiqSNSoUiVHz4bAzP20Qlw==", "nombre"=>"Universidad de la vida", "correo"=>"fantasmalogia@hotmail.com"}
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/crea_usuario"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-04 15:32:17 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (1.8ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.5ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (5.6ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 35ms (Views: 28.3ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/usuarios/crea_usuario" for 127.0.0.1 at 2018-09-04 15:32:28 -0500
+Processing by UsuariosController#crea_usuario as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tCH1dY7uPaqlbFOalbB/dkL8vCQm3FHbWVvbPaj1sVoZfuUoonpcZUVKZhXVJ9uGqiqSNSoUiVHz4bAzP20Qlw==", "nombre"=>"Universidad de la vida", "correo"=>"fantasmalogia@hotmail.com"}
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/crea_usuario"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started GET "/" for 127.0.0.1 at 2018-09-04 15:40:41 -0500
+Processing by PerfilController#index as HTML
+  Rendering perfil/index.html.erb within layouts/perfil
+  Rendered perfil/index.html.erb within layouts/perfil (1.2ms)
+Completed 200 OK in 160ms (Views: 145.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-04 15:54:02 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (1.2ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.3ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (11.5ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 51ms (Views: 28.8ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-04 15:54:18 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (2.6ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.6ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (5.8ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+Completed 200 OK in 35ms (Views: 27.5ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/usuarios/prueba" for 127.0.0.1 at 2018-09-04 15:54:28 -0500
+Processing by UsuariosController#prueba as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l77W115edZx067cP2xgbRW5MJo5+1e2inXHzXag5iZJ5SLOMf8iQ+lG/UVG0w80XfQiybxPZ/3fWRw8gBjfaqQ==", "nombre"=>"Carlos Cipagauta", "correo"=>"pfr@gmail.com"}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/prueba"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-04 15:54:32 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.4ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (4.8ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 32ms (Views: 28.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-04 15:54:54 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.3ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (13.0ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 51ms (Views: 28.3ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/usuarios/prueba?utf8=%E2%9C%93&nombre=Carlos+Cipagauta&correo=pfr%40gmail.com" for 127.0.0.1 at 2018-09-04 15:54:59 -0500
+Processing by UsuariosController#prueba as HTML
+  Parameters: {"utf8"=>"✓", "nombre"=>"Carlos Cipagauta", "correo"=>"pfr@gmail.com"}
+Redirected to http://localhost:3000/adm_panel/index
+Filter chain halted as :sessionActive rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-09-04 15:54:59 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (0.3ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 32ms (Views: 31.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-04 15:55:01 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (1.8ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.5ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (5.9ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  Rendered layouts/_sidebar.html.erb (1.1ms)
+Completed 200 OK in 53ms (Views: 46.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-04 15:55:27 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.4ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (8.4ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  Rendered layouts/_sidebar.html.erb (1.0ms)
+Completed 200 OK in 40ms (Views: 28.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/usuarios/prueba?utf8=%E2%9C%93&nombre=Maria&correo=pfr%40gmail.com" for 127.0.0.1 at 2018-09-04 15:55:31 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/usuarios/prueba"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-04 15:55:34 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.5ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (3.3ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 30ms (Views: 27.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-04 15:55:44 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (1.6ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.5ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (5.0ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  Rendered layouts/_sidebar.html.erb (1.2ms)
+Completed 200 OK in 34ms (Views: 27.8ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/usuarios/prueba" for 127.0.0.1 at 2018-09-04 15:55:48 -0500
+Processing by UsuariosController#prueba as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EhGe4u6RzfaDFP/vOGTUoCQ5KWDSMoqlHsEVEt/wgOb85/u5zwcokKZAGbFXvwLyN329gb8+mHBV9+lvcf7T3Q==", "nombre"=>"Anita Suarez", "correo"=>"pfr@gmail.com"}
+Completed 404 Not Found in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/prueba"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started POST "/__web_console/repl_sessions/bce27cf1ba438f28d4a60ee1d1c38e62/trace" for 127.0.0.1 at 2018-09-04 15:55:54 -0500
+Started POST "/__web_console/repl_sessions/bce27cf1ba438f28d4a60ee1d1c38e62/trace" for 127.0.0.1 at 2018-09-04 15:55:54 -0500
+Started POST "/__web_console/repl_sessions/bce27cf1ba438f28d4a60ee1d1c38e62/trace" for 127.0.0.1 at 2018-09-04 15:55:55 -0500
+Started POST "/__web_console/repl_sessions/bce27cf1ba438f28d4a60ee1d1c38e62/trace" for 127.0.0.1 at 2018-09-04 15:55:55 -0500
+Started POST "/__web_console/repl_sessions/bce27cf1ba438f28d4a60ee1d1c38e62/trace" for 127.0.0.1 at 2018-09-04 15:55:55 -0500
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-04 15:56:16 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.3ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (9.0ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+Completed 200 OK in 42ms (Views: 30.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-04 15:56:18 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (1.1ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.4ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (6.1ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 36ms (Views: 32.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/usuarios/prueba" for 127.0.0.1 at 2018-09-04 15:56:24 -0500
+Processing by UsuariosController#prueba as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"697cJCg91DTZptKpFnSuWnXqiNrbX1lWFBZSp/5p0l8FKLl/CasxUvzyNPd5r3gIZq4cO7ZTS4NfIK7aUGeBZA==", "nombre"=>"Maria", "correo"=>"pfr@gmail.com"}
+  Rendering usuarios/prueba.html.erb within layouts/admin
+  Rendered usuarios/prueba.html.erb within layouts/admin (1.4ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+  Rendered layouts/_sidebar.html.erb (1.6ms)
+Completed 200 OK in 107ms (Views: 66.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/usuarios/prueba" for 127.0.0.1 at 2018-09-04 15:59:44 -0500
+Processing by UsuariosController#prueba as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"697cJCg91DTZptKpFnSuWnXqiNrbX1lWFBZSp/5p0l8FKLl/CasxUvzyNPd5r3gIZq4cO7ZTS4NfIK7aUGeBZA==", "nombre"=>"Maria", "correo"=>"pfr@gmail.com"}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/prueba"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started POST "/usuarios/prueba" for 127.0.0.1 at 2018-09-04 15:59:47 -0500
+Processing by UsuariosController#prueba as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"697cJCg91DTZptKpFnSuWnXqiNrbX1lWFBZSp/5p0l8FKLl/CasxUvzyNPd5r3gIZq4cO7ZTS4NfIK7aUGeBZA==", "nombre"=>"Maria", "correo"=>"pfr@gmail.com"}
+Completed 404 Not Found in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/prueba"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started POST "/usuarios/prueba" for 127.0.0.1 at 2018-09-04 15:59:48 -0500
+Processing by UsuariosController#prueba as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"697cJCg91DTZptKpFnSuWnXqiNrbX1lWFBZSp/5p0l8FKLl/CasxUvzyNPd5r3gIZq4cO7ZTS4NfIK7aUGeBZA==", "nombre"=>"Maria", "correo"=>"pfr@gmail.com"}
+Completed 404 Not Found in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/prueba"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started POST "/usuarios/prueba" for 127.0.0.1 at 2018-09-04 15:59:48 -0500
+Processing by UsuariosController#prueba as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"697cJCg91DTZptKpFnSuWnXqiNrbX1lWFBZSp/5p0l8FKLl/CasxUvzyNPd5r3gIZq4cO7ZTS4NfIK7aUGeBZA==", "nombre"=>"Maria", "correo"=>"pfr@gmail.com"}
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/prueba"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started POST "/usuarios/prueba" for 127.0.0.1 at 2018-09-04 15:59:48 -0500
+Processing by UsuariosController#prueba as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"697cJCg91DTZptKpFnSuWnXqiNrbX1lWFBZSp/5p0l8FKLl/CasxUvzyNPd5r3gIZq4cO7ZTS4NfIK7aUGeBZA==", "nombre"=>"Maria", "correo"=>"pfr@gmail.com"}
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/prueba"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started POST "/usuarios/prueba" for 127.0.0.1 at 2018-09-04 15:59:49 -0500
+Processing by UsuariosController#prueba as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"697cJCg91DTZptKpFnSuWnXqiNrbX1lWFBZSp/5p0l8FKLl/CasxUvzyNPd5r3gIZq4cO7ZTS4NfIK7aUGeBZA==", "nombre"=>"Maria", "correo"=>"pfr@gmail.com"}
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/prueba"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started POST "/usuarios/prueba" for 127.0.0.1 at 2018-09-04 15:59:49 -0500
+Processing by UsuariosController#prueba as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"697cJCg91DTZptKpFnSuWnXqiNrbX1lWFBZSp/5p0l8FKLl/CasxUvzyNPd5r3gIZq4cO7ZTS4NfIK7aUGeBZA==", "nombre"=>"Maria", "correo"=>"pfr@gmail.com"}
+Completed 404 Not Found in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/prueba"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started POST "/usuarios/prueba" for 127.0.0.1 at 2018-09-04 15:59:49 -0500
+Processing by UsuariosController#prueba as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"697cJCg91DTZptKpFnSuWnXqiNrbX1lWFBZSp/5p0l8FKLl/CasxUvzyNPd5r3gIZq4cO7ZTS4NfIK7aUGeBZA==", "nombre"=>"Maria", "correo"=>"pfr@gmail.com"}
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/prueba"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started POST "/__web_console/repl_sessions/a27b2a544188a5db7414862c74bd3030/trace" for 127.0.0.1 at 2018-09-04 16:01:04 -0500
+Started POST "/usuarios/prueba" for 127.0.0.1 at 2018-09-04 16:03:25 -0500
+Processing by UsuariosController#prueba as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"697cJCg91DTZptKpFnSuWnXqiNrbX1lWFBZSp/5p0l8FKLl/CasxUvzyNPd5r3gIZq4cO7ZTS4NfIK7aUGeBZA==", "nombre"=>"Maria", "correo"=>"pfr@gmail.com"}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/prueba"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started POST "/usuarios/prueba" for 127.0.0.1 at 2018-09-04 16:03:26 -0500
+Processing by UsuariosController#prueba as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"697cJCg91DTZptKpFnSuWnXqiNrbX1lWFBZSp/5p0l8FKLl/CasxUvzyNPd5r3gIZq4cO7ZTS4NfIK7aUGeBZA==", "nombre"=>"Maria", "correo"=>"pfr@gmail.com"}
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/prueba"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started POST "/usuarios/prueba" for 127.0.0.1 at 2018-09-04 16:03:28 -0500
+Processing by UsuariosController#prueba as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"697cJCg91DTZptKpFnSuWnXqiNrbX1lWFBZSp/5p0l8FKLl/CasxUvzyNPd5r3gIZq4cO7ZTS4NfIK7aUGeBZA==", "nombre"=>"Maria", "correo"=>"pfr@gmail.com"}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches "/usuarios/prueba"):
+  
+app/controllers/application_controller.rb:16:in `sessionActive'
+Started GET "/login/index" for 127.0.0.1 at 2018-09-04 16:03:31 -0500
+Processing by LoginController#index as HTML
+Redirected to http://localhost:3000/adm_panel/index
+Filter chain halted as :loginSessionActive rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-09-04 16:03:31 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (0.4ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+  Rendered layouts/_sidebar.html.erb (1.2ms)
+Completed 200 OK in 27ms (Views: 26.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/index" for 127.0.0.1 at 2018-09-04 16:03:33 -0500
+Processing by LoginController#index as HTML
+Redirected to http://localhost:3000/adm_panel/index
+Filter chain halted as :loginSessionActive rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-09-04 16:03:33 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (0.6ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-04 16:03:35 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (1.2ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.4ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (16.9ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 69ms (Views: 35.0ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-04 16:04:13 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.3ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (10.1ms)
+  Rendered layouts/_navbar.html.erb (1.3ms)
+  Rendered layouts/_sidebar.html.erb (1.2ms)
+Completed 200 OK in 52ms (Views: 40.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/usuarios/prueba" for 127.0.0.1 at 2018-09-04 16:04:23 -0500
+Processing by UsuariosController#prueba as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7zFO7oxA0KnL7Sseh1P6IjyM7JkBKhOMj+fzo9gMmVQBxyu1rdY1z+65zUDoiCxwL8h4eGwmAVnE0Q/edgLKbw==", "nombre"=>"Maria", "correo"=>"pfr@gmail.com"}
+Redirected to http://localhost:3000/adm_panel/index
+Filter chain halted as :sessionActive rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-09-04 16:04:23 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (0.5ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  Rendered layouts/_sidebar.html.erb (1.2ms)
+Completed 200 OK in 37ms (Views: 33.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/areas" for 127.0.0.1 at 2018-09-04 16:04:33 -0500
+Processing by AreasController#index as HTML
+  Rendering areas/index.html.erb within layouts/admin
+  [1m[36mArea Load (79.0ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  ↳ app/views/areas/index.html.erb:5
+  Rendered areas/index.html.erb within layouts/admin (123.4ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+Completed 200 OK in 191ms (Views: 59.4ms | ActiveRecord: 95.4ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-04 16:04:38 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (2.6ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (1.7ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (17.7ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+Completed 200 OK in 70ms (Views: 56.4ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-04 16:07:18 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (2.8ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"prueba", :controller=>"usuarios"}):
+    3: </div>
+    4: <br>
+    5: <div class="col-md-12 col-lg-12">
+    6:   <%= form_tag({controller: "usuarios", action: "prueba"}, method: "post") do |p|%>
+    7:   <label>Nombre</label>
+    8:   <input name="nombre" class="form-control" required="required">
+    9:   <label >Correo univeridad</label>
+  
+app/views/usuarios/universidad.html.erb:6:in `_app_views_usuarios_universidad_html_erb___2155422411856476801_70226423666620'
+Started GET "/areas" for 127.0.0.1 at 2018-09-04 16:07:35 -0500
+Processing by AreasController#index as HTML
+  Rendering areas/index.html.erb within layouts/admin
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  ↳ app/views/areas/index.html.erb:5
+  Rendered areas/index.html.erb within layouts/admin (11.4ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  Rendered layouts/_sidebar.html.erb (1.1ms)
+Completed 200 OK in 69ms (Views: 63.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-04 16:07:37 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (3.3ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  Rendered usuarios/universidad.html.erb within layouts/admin (9.2ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 3.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"prueba", :controller=>"usuarios"}):
+    3: </div>
+    4: <br>
+    5: <div class="col-md-12 col-lg-12">
+    6:   <%= form_tag({controller: "usuarios", action: "prueba"}, method: "post") do |p|%>
+    7:   <label>Nombre</label>
+    8:   <input name="nombre" class="form-control" required="required">
+    9:   <label >Correo univeridad</label>
+  
+app/views/usuarios/universidad.html.erb:6:in `_app_views_usuarios_universidad_html_erb___2155422411856476801_70226574834200'
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-04 16:07:49 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.2ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (15.6ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 42ms (Views: 32.2ms | ActiveRecord: 7.4ms)
+
+
+Started POST "/usuarios/crea_usuario" for 127.0.0.1 at 2018-09-04 16:08:01 -0500
+Processing by UsuariosController#crea_usuario as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NNzWZ+UdBkjqx6B2/215bGjqhIHXEFO+eXYnb/QMohqZg8Y6yYlnhwrhlfm/+t2cgDyqkNvYizTTzExhY5QD1w==", "nombre"=>"Maria", "correo"=>"pfr@gmail.com"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."correo" = $1 LIMIT $2[0m  [["correo", "pfr@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usuarios_controller.rb:50
+  [1m[36mUsuario Create (89.6ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "tipo", "correo", "psw", "estado", "cod_recovery", "validado", "created_at", "updated_at", "creado_por") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["nombre", "Maria"], ["tipo", 2], ["correo", "pfr@gmail.com"], ["psw", "aa559a008482772018aae37d3c75934b"], ["estado", 1], ["cod_recovery", 8288], ["validado", 2], ["created_at", "2018-09-04 21:08:01.168792"], ["updated_at", "2018-09-04 21:08:01.168792"], ["creado_por", 3]]
+  ↳ app/controllers/usuarios_controller.rb:50
+  [1m[35m (14.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usuarios_controller.rb:50
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/usuarios_controller.rb:54
+  [1m[36mDataUsuario Create (88.8ms)[0m  [1m[32mINSERT INTO "data_usuarios" ("usuarios_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["usuarios_id", 32], ["created_at", "2018-09-04 21:08:01.279607"], ["updated_at", "2018-09-04 21:08:01.279607"]]
+  ↳ app/controllers/usuarios_controller.rb:54
+  [1m[35m (58.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/usuarios_controller.rb:54
+  Rendering usuario_mailer/valida_usuario.html.erb within layouts/mailer
+  Rendered usuario_mailer/valida_usuario.html.erb within layouts/mailer (1.7ms)
+UsuarioMailer#valida_universidad: processed outbound mail in 174.5ms
+Sent mail to pfr@gmail.com (2529.2ms)
+Date: Tue, 04 Sep 2018 16:08:02 -0500
+From: celartur69@gmail.com
+To: pfr@gmail.com
+Message-ID: <5b8ef4322e6c9_2fba2ab03ee408409522c@t01.mail>
+Subject: Bienvenido a PUBLED
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+  =
+
+    <!DOCTYPE html>
+<html lang=3D"en" dir=3D"ltr">
+  <head>
+    <meta charset=3D"utf-8">
+    <title></title>
+  </head>
+  <body style=3D"background-color:#bbd700; text-align: center">
+    <div>
+        <h1>PUBLED</h1>
+    </div>
+    <div><br><br>
+        Maria:<br><br>
+        Bienvenido a PUBLED, ahora su instituci=C3=B3n educativa podr=C3=A1=
+ compartir el conocimiento con millones de persona.<br><br>
+        Para activar la cuenta y completar el registro, por favor, contin=
+=C3=BAe en el siguiente link
+        <h3><a href=3D"http://localhost:3000/usuarios/conf_universidad?in=
+=3D6297571629417152_24314948376128">Completar el registro</a></h3>
+    </div>
+    <div>
+        Gracias
+    </div>
+  </body>
+</html>
+
+  </body>
+</html>
+
+Redirected to http://localhost:3000/usuarios/universidad
+Completed 302 Found in 3538ms (ActiveRecord: 252.1ms)
+
+
+Started GET "/usuarios/universidad" for 127.0.0.1 at 2018-09-04 16:08:04 -0500
+Processing by UsuariosController#universidad as HTML
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mselect usuarios.id, nombre, correo, estado, validado, usuarios.created_at, foto from usuarios inner join data_usuarios on data_usuarios.usuarios_id = usuarios.id where usuarios.tipo= 2 [0m
+  ↳ app/controllers/usuarios_controller.rb:8
+  Rendering usuarios/universidad.html.erb within layouts/admin
+  [1m[36mDataUsuario Load (0.5ms)[0m  [1m[34mSELECT  "data_usuarios".* FROM "data_usuarios" WHERE "data_usuarios"."usuarios_id" = $1 LIMIT $2[0m  [["usuarios_id", 24], ["LIMIT", 1]]
+  ↳ app/helpers/adm_panel_helper.rb:4
+  Rendered usuarios/universidad.html.erb within layouts/admin (3.6ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 29ms (Views: 26.3ms | ActiveRecord: 1.1ms)
+
+

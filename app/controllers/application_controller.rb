@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
       #
     end
     #Comprobar si puede acceder a la ruta actual
-    path = Rails.application.routes.recognize_path(request.path)
+    path = Rails.application.routes.recognize_path(request.url, method: request.env["REQUEST_METHOD"])
     path_now = path[:controller]+'/'+path[:action]
     usuRutas = rutasUsuario
     unless usuRutas.blank?
@@ -77,12 +77,12 @@ class ApplicationController < ActionController::Base
 
   #Lugar permitidos para super administrador
   def adm_acc
-    ['adm_panel/index', 'usuarios/universidad', 'usuarios/crea_u', 'areas/index',
+    ['adm_panel/index', 'usuarios/universidad', 'usuarios/crea_usuario', 'areas/index',
     'areas/create', 'areas/new', 'areas/edit', 'areas/show', 'areas/update', 'areas/destroy']
   end
   #Lugares permitidos para Universidad
   def univ_acc
-    ['adm_panel/index', 'usuarios/profesor', 'usuarios/crea_u', 'cursos/index', 'cursos/create',
+    ['adm_panel/index', 'usuarios/profesor', 'usuarios/crea_usuario', 'cursos/index', 'cursos/create',
        'cursos/new', 'cursos/edit', 'cursos/show', 'cursos/update', 'cursos/destroy']
   end
   #Lugares permitidos para Profesor

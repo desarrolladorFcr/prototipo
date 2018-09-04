@@ -12,17 +12,18 @@ Rails.application.routes.draw do
   get 'adm_panel/index'
   get 'adm_panel/prueba'
   get 'adm_panel/cerrar'
-  get 'login/index'
-  post 'login/ingreso'
-  post 'login/recuperar'
   #usuarios
   get 'usuarios/universidad'
   get 'usuarios/profesor'
-  post 'usuarios/crea_u'
   get 'usuarios/conf_universidad'
+  post 'usuarios/crea_usuario'
   post 'usuarios/usuario_data'
+
   #login
   get 'login/salir'
+  get 'login/index'
+  post 'login/ingreso'
+  post 'login/recuperar'
   #Perfil
   get 'perfil/hola'
 end

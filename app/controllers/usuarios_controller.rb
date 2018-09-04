@@ -15,8 +15,64 @@ class UsuariosController < ApplicationController
     @profesores = Usuario.find_by_sql([sentencia])
     @dataUsuario = DataUsuario
   end
-  def crea_u
-    render 'prueba'
+  def prueba
+
+  end
+  def crea_usuario
+    correo = params['correo']
+    nombre = params['nombre']
+    apellido = params['apellido']
+    data = Usuario.find_by(correo: correo)
+
+    if data.blank?
+      usuModel = Usuario.new
+      dataUsuModel = DataUsuario.new
+      usuModel.nombre = nombre
+      usuModel.correo = correo
+      #Si el usuario actual es administrador, crea una universidad
+      if getTipo == ADM
+          usuModel.tipo = UNIV
+          alerta = "Usuario creado. Se le ha enviado un correo electrónico a la universidad para que active y complete el registro"
+          accion = "universidad"
+      end
+      #Si el usuario actual es universidad, crea un profesor
+      if getTipo == UNIV
+        usuModel.tipo = PROF
+        alerta = "Usuario creado. Se le ha enviado un correo electrónico al profesor para que active y complete el registro"
+        accion = "profesor"
+      end
+      #
+      usuModel.estado = ACTIVO
+      usuModel.validado = SIN_VALIDAR
+      usuModel.cod_recovery = rand(9999)
+      usuModel.psw = encriptaTexto(rand(9999999).to_s)
+      usuModel.creado_por = getAdminId
+      usuModel.save
+      #Guardar los datos del modelo DataUsuario
+      dataUsuModel.usuarios_id = usuModel.id
+      dataUsuModel.apellido = apellido
+      dataUsuModel.save
+      #creación del link de confirmación de usuario
+      link = url_actual('usuarios/conf_universidad')
+      cod = enc_cod(usuModel.cod_recovery)
+      id = enc_id(usuModel.id)
+      link = link+"?in=#{cod}_#{id}"
+      params['link'] = link
+
+      if getTipo == ADM
+          UsuarioMailer.valida_universidad(params).deliver_now
+      end
+
+      if getTipo == UNIV
+          UsuarioMailer.valida_profesor(params).deliver_now
+      end
+
+      flash[:alert] = alerta
+      redirect_to({:action => accion})
+    else
+      flash[:alert] = "El usuario ya existe"
+      redirect_to({:action => "universidad"})
+    end
   end
   #Muestra la vista para confirmar universidad y profesor
   def conf_universidad

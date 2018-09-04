@@ -2,10 +2,9 @@
   Cree un usuario universidad con el nombre de ésta y su correo electrónico, a la universidad le llegara un correo el cual deberá de confirmar para activar la cuenta
 </div>
 <br>
-
 <div class="col-md-12 col-lg-12">
-  <%= form_tag({controller: "usuarios", action: "crea_u"}) do%>
-  <label >Nombreeeeeeeeeeeeee</label>
+  <%= form_tag({controller: "usuarios", action: "crea_usuario"}, method: "post") do |p|%>
+  <label>Nombre</label>
   <input name="nombre" class="form-control" required="required">
   <label >Correo univeridad</label>
   <input name="correo" class="form-control" required="required" type="email">
