@@ -49581,3 +49581,28 @@ Processing by AdmPanelController#index as HTML
 Completed 200 OK in 90ms (Views: 85.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/login/index" for 127.0.0.1 at 2018-09-03 20:57:25 -0500
+Processing by LoginController#index as HTML
+Redirected to http://localhost:3000/adm_panel/index
+Filter chain halted as :loginSessionActive rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-09-03 20:57:25 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (0.2ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.6ms)
+Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-09-03 20:57:30 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (0.4ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.0ms)
+
+
