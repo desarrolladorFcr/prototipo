@@ -29,16 +29,18 @@
             <tr>
               <td><%= curso.nombre %></td>
               <td><%= curso.descripcion %></td>
-              <td><%= curso.imagen %></td>
+              <td>
+                <a href="<%= curso.imagen %>" target="_blank">apreciar</a>
+              </td>
               <td><%= curso.incluye %></td>
               <td><%= curso.enfocado_a %></td>
               <td><%= curso.requisitos %></td>
               <td><%= curso.tiempo_estimado %></td>
-              <td><%= curso.certificable %></td>
-              <td><%= curso.estado %></td>
-              <td><%= link_to 'Show', curso %></td>
-              <td><%= link_to 'Edit', edit_curso_path(curso) %></td>
-              <td><%= link_to 'Destroy', curso, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= certificableNom(curso.certificable) %></td>
+              <td><%= estadoNom(curso.estado) %></td>
+              <td><%= link_to 'Ver', curso %></td>
+              <td><%= link_to 'Editar', edit_curso_path(curso) %></td>
+              <td><%= link_to 'Eliminar', curso, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
         </tbody>

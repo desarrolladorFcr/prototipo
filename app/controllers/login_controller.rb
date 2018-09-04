@@ -44,4 +44,15 @@ class LoginController < ApplicationController
     session[:tipo] = nil
     redirect_to({:action => 'index', :alert => "Sesión finalizada, vuelve pronto"})
   end
+  def usu
+    usuModel = Usuario.new
+    usuModel.nombre = "Administrador"
+    usuModel.tipo = 1
+    usuModel.correo = "cifuentesrfelipe@gmail.com"
+    usuModel.psw = encriptaTexto("admin2018")
+    usuModel.estado = ACTIVO
+    usuModel.validado = VALIDADO
+    usuModel.save
+    redirect_to(:action => 'index', :alert => usuModel.id)
+  end
 end

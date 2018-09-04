@@ -13,7 +13,8 @@ class ApplicationController < ActionController::Base
       #
     end
     #Comprobar si puede acceder a la ruta actual
-    path_now = request.path
+    path = Rails.application.routes.recognize_path(request.path)
+    path_now = path[:controller]+'/'+path[:action]
     usuRutas = rutasUsuario
     unless usuRutas.blank?
       unless path_now.in?(usuRutas)
@@ -76,16 +77,16 @@ class ApplicationController < ActionController::Base
 
   #Lugar permitidos para super administrador
   def adm_acc
-    ['/adm_panel/index', '/usuarios/universidad', '/usuarios/crea_u', '/areas', '/areas/index',
-    '/areas/create', '/areas/new', '/areas/edit', '/areas/show', '/areas/update', '/areas/destroy']
+    ['adm_panel/index', 'usuarios/universidad', 'usuarios/crea_u', 'areas/index',
+    'areas/create', 'areas/new', 'areas/edit', 'areas/show', 'areas/update', 'areas/destroy']
   end
   #Lugares permitidos para Universidad
   def univ_acc
-    ['/adm_panel/index', '/usuarios/profesor', '/usuarios/crea_u', '/cursos', '/cursos/create',
-       '/cursos/new', '/cursos/edit', '/cursos/show', '/cursos/update', '/cursos/destroy']
+    ['adm_panel/index', 'usuarios/profesor', 'usuarios/crea_u', 'cursos/index', 'cursos/create',
+       'cursos/new', 'cursos/edit', 'cursos/show', 'cursos/update', 'cursos/destroy']
   end
   #Lugares permitidos para Profesor
   def prof_acc
-    ['/adm_panel/index']
+    ['adm_panel/index']
   end
 end

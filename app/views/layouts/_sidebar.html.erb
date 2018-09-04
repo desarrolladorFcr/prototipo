@@ -14,7 +14,7 @@
   <ul class="drawer-menu" id="mainMenu" data-children=".drawer-submenu">
 
     <% session[:rutas].each do |ruta| %>
-      <% if ruta == '/adm_panel/index'%>
+      <% if ruta == 'adm_panel/index'%>
         <li class="drawer-menu-item">
           <a href="<%= url_route("adm_panel/index")%>">
             <i class="material-icons">dashboard</i>
@@ -22,7 +22,7 @@
           </a>
         </li>
       <% end %>
-      <% if ruta == '/usuarios/universidad'%>
+      <% if ruta == 'usuarios/universidad'%>
         <li class="drawer-menu-item">
           <a href="<%= url_route('usuarios/universidad')%>">
             <i class="material-icons">account_balance</i>
@@ -30,7 +30,7 @@
           </a>
         </li>
       <%end%>
-      <%if ruta == '/usuarios/profesor' %>
+      <%if ruta == 'usuarios/profesor' %>
         <li class="drawer-menu-item">
           <a href="<%= url_route('usuarios/profesor')%>">
             <i class="material-icons">school</i>
@@ -38,7 +38,7 @@
           </a>
         </li>
       <%end %>
-      <%if ruta == '/areas' %>
+      <%if ruta == 'areas/index' %>
       <li class="drawer-menu-item">
         <a href="<%= url_route('areas')%>">
           <i class="material-icons">class</i>
@@ -46,7 +46,7 @@
         </a>
       </li>
       <% end %>
-      <% if ruta == '/cursos' %>
+      <% if ruta == 'cursos/index' %>
       <li class="drawer-menu-item">
         <a href="<%= url_route('cursos')%>">
           <i class="material-icons">library_books</i>

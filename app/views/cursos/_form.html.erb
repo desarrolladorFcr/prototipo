@@ -23,8 +23,25 @@
   </div>
 
   <div class="field">
-    <%= form.label :imagen %>
-    <%= form.file_field :imagen, class: 'form-control' %>
+    <% unless curso.imagen.blank?%>
+      <%= form.label :imagen %>
+      <div id="img" class="row">
+        <div class="col-md-12 col-lg-12">
+          <a title="eliminar imagen" class="material-icons" href="#" id="elim_img">delete_forever</a>
+        </div>
+        <div class="col-md-12 col-lg-12">
+          <img src="<%= curso.imagen %>">
+          <input type="hidden" value="1" id="exist_img">
+        </div>
+      </div>
+      <div id="inpt_img">
+        
+      </div>
+    <% else %>
+      <%= form.label :imagen %>
+      <%= form.file_field :imagen, class: 'form-control' %>
+    <% end %>
+
   </div>
 
   <div class="field">
@@ -72,4 +89,7 @@
   </div>
 <% end %>
 </div>
+<% unless @act_prof.blank? %>
+<input type="hidden" value="<%= @act_prof[:profesor_id]%>" id="act_prof">
+<% end %>
 <br>

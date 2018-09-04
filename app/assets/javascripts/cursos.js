@@ -2,9 +2,11 @@
 var curso_form ={
     INICIO:function(){
       curso_form.EVENTOS();
+      curso_form.LOGICA.sel_prof();
     },
     EVENTOS:function(){
       $("#btn_curso").on("click", curso_form.LOGICA.enviar);
+      $("#elim_img").on("click", curso_form.LOGICA.elim_img);
     },
     LOGICA:{
       enviar:function(){
@@ -13,7 +15,7 @@ var curso_form ={
           valida = true;
 
           if(typeof existImg == "undefined"){
-              img = $("#curso_imagen").val();
+              img = $('body').find("#curso_imagen").val();
               if(img.length == 0){
                 valida = false;
                 msj = 'El curso debe de tener una imagen descriptiva';
@@ -34,6 +36,19 @@ var curso_form ={
             $("#error_explanation").empty();
             $("#err_prop").html(msj);
           }
+      },
+      elim_img:function(e){
+        e.preventDefault()
+        $(this).parents("#img").empty();
+        $("#inpt_img").html('<input class="form-control" type="file" name="curso[imagen]" id="curso_imagen">');
+      },
+      sel_prof:function(){
+        $index = $("#act_prof").val()
+
+        if(typeof $index != "undefined"){
+          $("#prof option[value="+ $index +"]").attr("selected",true);
+        }
+
       }
     }
 }

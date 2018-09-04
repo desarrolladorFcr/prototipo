@@ -21,4 +21,14 @@ module AdmPanelHelper
     res = 'No' if val == SIN_VALIDAR
     return res
   end
+
+  def certificableNom(val)
+    res = ''
+    if val.to_i == 1
+      res = 'Si'
+    else
+      res = 'No'
+    end
+    return res
+  end
 end

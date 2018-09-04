@@ -1,6 +1,6 @@
 class CursosController < ApplicationController
   before_action :set_curso, only: [:show, :edit, :update, :destroy]
-  #before_action :sessionActive
+  before_action :sessionActive
   layout 'admin'
   # GET /cursos
   # GET /cursos.json
@@ -26,6 +26,13 @@ class CursosController < ApplicationController
 
   # GET /cursos/1/edit
   def edit
+    stn = "select usuarios.id, nombre, apellido, correo from usuarios "
+    stn += "inner join data_usuarios on data_usuarios.usuarios_id=usuarios.id where "
+    stn += "creado_por = #{getAdminId} and validado = #{VALIDADO} and estado = #{ACTIVO} and tipo = #{PROF} "
+    #@profs = ActiveRecord::Base.connection.execute(stn)
+    @profesores = Usuario.find_by_sql([stn])
+    @areas = Area.all();
+    @act_prof = CursosHasProf.find_by(cursos_id: @curso.id)
   end
 
   # POST /cursos
@@ -72,9 +79,21 @@ class CursosController < ApplicationController
   def update
     respond_to do |format|
       if @curso.update(curso_params)
-        format.html { redirect_to @curso, notice: 'Curso was successfully updated.' }
+        CursosHasProf.where(cursos_id: @curso.id).destroy_all
+        cursoProf = CursosHasProf.new
+        cursoProf.cursos_id = @curso.id
+        cursoProf.profesor_id = params['prof']
+        cursoProf.save
+        format.html { redirect_to @curso, notice: 'El curso fue correctamente actualizado' }
         format.json { render :show, status: :ok, location: @curso }
       else
+        stn = "select usuarios.id, nombre, apellido, correo from usuarios "
+        stn += "inner join data_usuarios on data_usuarios.usuarios_id=usuarios.id where "
+        stn += "creado_por = #{getAdminId} and validado = #{VALIDADO} and estado = #{ACTIVO} and tipo = #{PROF} "
+        #@profs = ActiveRecord::Base.connection.execute(stn)
+        @profesores = Usuario.find_by_sql([stn])
+        @areas = Area.all();
+        @act_prof = CursosHasProf.find_by(cursos_id: @curso.id)
         format.html { render :edit }
         format.json { render json: @curso.errors, status: :unprocessable_entity }
       end
