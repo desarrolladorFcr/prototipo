@@ -49554,3 +49554,30 @@ Processing by PerfilController#index as HTML
 Completed 200 OK in 368ms (Views: 366.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/login/index" for 127.0.0.1 at 2018-09-03 20:39:33 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by LoginController#index as HTML
+Redirected to http://localhost:3000/adm_panel/index
+Filter chain halted as :loginSessionActive rendered or redirected
+Completed 302 Found in 12ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-09-03 20:39:33 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (0.4ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 265ms (Views: 260.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/adm_panel/index" for 127.0.0.1 at 2018-09-03 20:39:39 -0500
+Processing by AdmPanelController#index as HTML
+  Rendering adm_panel/index.html.erb within layouts/admin
+  Rendered adm_panel/index.html.erb within layouts/admin (1.7ms)
+  Rendered layouts/_navbar.html.erb (2.0ms)
+  Rendered layouts/_sidebar.html.erb (4.5ms)
+Completed 200 OK in 90ms (Views: 85.2ms | ActiveRecord: 0.0ms)
+
+
