@@ -49545,3 +49545,12 @@ Processing by PerfilController#index as HTML
 Completed 200 OK in 426ms (Views: 379.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-09-03 20:18:52 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PerfilController#index as HTML
+  Rendering perfil/index.html.erb within layouts/perfil
+  Rendered perfil/index.html.erb within layouts/perfil (0.9ms)
+Completed 200 OK in 368ms (Views: 366.4ms | ActiveRecord: 0.0ms)
+
+
