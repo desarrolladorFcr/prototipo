@@ -30,12 +30,12 @@
           <a title="eliminar imagen" class="material-icons" href="#" id="elim_img">delete_forever</a>
         </div>
         <div class="col-md-12 col-lg-12">
-          <img src="<%= curso.imagen %>">
+          <img src="<%= curso.imagen %>" width="250">
           <input type="hidden" value="1" id="exist_img">
         </div>
       </div>
       <div id="inpt_img">
-        
+
       </div>
     <% else %>
       <%= form.label :imagen %>
@@ -85,7 +85,7 @@
   </div>
   <div class="actions">
     <br>
-    <button type="button" class="btn btn-success" id="btn_curso">Crear</button>
+    <button type="button" class="btn btn-success" id="btn_curso">Enviar</button>
   </div>
 <% end %>
 </div>

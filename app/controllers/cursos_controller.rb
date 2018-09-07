@@ -78,8 +78,25 @@ class CursosController < ApplicationController
   # PATCH/PUT /cursos/1.json
   def update
     respond_to do |format|
-      if @curso.update(curso_params)
-        CursosHasProf.where(cursos_id: @curso.id).destroy_all
+      @curso.nombre = params['curso']['nombre']
+      @curso.descripcion = params['curso']['descripcion']
+      @curso.incluye = params['curso']['incluye']
+      @curso.enfocado_a = params['curso']['enfocado_a']
+      @curso.requisitos = params['curso']['requisitos']
+      @curso.tiempo_estimado = params['curso']['tiempo_estimado']
+      @curso.certificable = params['curso']['certificable']
+      @curso.areas_id = params['curso']['areas_id']
+      unless params['curso']['imagen'].blank?
+        @curso.remove_imagen!
+      end
+      if @curso.save
+        unless params['curso']['imagen'].blank?
+          cursoModel = Curso.find(@curso.id)
+          cursoModel.imagen = params['curso']['imagen']
+          cursoModel.save!
+        end
+
+        CursosHasProf.where(cursos_id: @curso.id).delete_all;
         cursoProf = CursosHasProf.new
         cursoProf.cursos_id = @curso.id
         cursoProf.profesor_id = params['prof']

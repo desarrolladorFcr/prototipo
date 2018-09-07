@@ -1,0 +1,14 @@
+<div class="login-page">
+  <div class="form">
+    <p>Ingrese una contraseña nueva</p>
+    <%= form_tag({controller: "login", action: "cambio"}, {method: "post", class: "login-form"}) do%>
+    <%= text_field_tag('psw', nil, {:placeholder => 'Contraseña', :type => 'password', :required => true })%>
+    <%= password_field_tag('valida', nil, {:placeholder => 'Validación', :type => 'password', :required => true })%>
+    <input type="hidden" value="<%= @valin %>" name="in">
+    <button type="submit">Ingresar</button>
+    <p style="color:red">
+      <%= @alert %>
+      <p>
+      <% end%>
+    </div>
+  </div>

@@ -11,8 +11,13 @@
     <div><br><br>
         <%= @usuario%>:<br><br>
         <%= @cuerpo%><br><br>
+
+        <% unless @recuperar%>
         Para activar la cuenta y completar el registro, por favor, continúe en el siguiente link
         <h3><a href="<%= @link %>">Completar el registro</a></h3>
+        <%else %>
+        <h3><a href="<%= @link %>">Recuperar la contraseña</a></h3>
+        <% end %>
     </div>
     <div>
         Gracias

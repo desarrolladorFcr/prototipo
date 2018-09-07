@@ -4,16 +4,19 @@
     <% if @opt == '1'%>
         <%= form_tag({controller: "login", action: "recuperar"}, {method: "post", class: "login-form"}) do%>
         <h5>Ingrese su correo electrónico, y le enviaremos un mensaje de recuperación</h5>
-        <%= text_field_tag('correo', nil, {:placeholder => "Correo"}) %>
+        <%= text_field_tag('correo', nil, {:placeholder => "Correo", :type => 'email', :required => true }) %>
         <button>Enviar</button>
+        <p style="color:red">
+          <%= @alert %>
+        <p>
         <p class="message">
           <%= link_to("Volver", :controller => 'login', :action => 'index')%>
         </p>
       <% end%>
     <% else%>
       <%= form_tag({controller: "login", action: "ingreso"}, {method: "post", class: "login-form"}) do%>
-      <%= text_field_tag('correo', @correo, {:placeholder => 'Correo'})%>
-      <%= password_field_tag('password', nil, {:placeholder => 'Contraseña'})%>
+      <%= text_field_tag('correo', @correo, {:placeholder => 'Correo', :type => 'email', :required => true })%>
+      <%= password_field_tag('password', nil, {:placeholder => 'Contraseña', :type => 'email', :required => true })%>
       <button type="submit">Ingresar</button>
       <p style="color:red">
         <%= @alert %>

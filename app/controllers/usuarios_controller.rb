@@ -105,22 +105,27 @@ class UsuariosController < ApplicationController
     val = true
     iguales = psw <=> conf
 
-    if iguales == 0
-      if foto.blank? == false
-        usuario = Usuario.find_by(id: session[:id])
-        datausu = DataUsuario.find_by(usuarios_id: session[:id])
-        datausu.foto = params['foto']
-        datausu.save!
-        usuario.psw = encriptaTexto(psw)
-        usuario.validado = VALIDADO
-        usuario.save
-        redirect_to({:action => "index", :controller => 'login', :alert => "Su usuario fue validado. Ingrese con la contraseña que eligió"})
+    unless params['psw'].blank?
+      if iguales == 0
+        if foto.blank? == false
+          usuario = Usuario.find_by(id: session[:id])
+          datausu = DataUsuario.find_by(usuarios_id: session[:id])
+          datausu.foto = params['foto']
+          datausu.save!
+          usuario.psw = encriptaTexto(psw)
+          usuario.validado = VALIDADO
+          usuario.save
+          redirect_to({:action => "index", :controller => 'login', :alert => "Su usuario fue validado. Ingrese con la contraseña que eligió"})
+        else
+          alert = "Debe agregar un logo"
+          redirect_to({:action => "conf_universidad",  :in => valin, :alert => alert})
+        end
       else
-        alert = "Debe agregar un logo"
-        redirect_to({:action => "conf_universidad",  :in => valin, :alert => alert})
+        alert = "Las contraseñas no coinciden"
+        redirect_to({:action => "conf_universidad", :in => valin, :alert => alert})
       end
     else
-      alert = "Las contraseñas no coinciden"
+      alert = "La contraseña no puede estar vacía"
       redirect_to({:action => "conf_universidad", :in => valin, :alert => alert})
     end
   end

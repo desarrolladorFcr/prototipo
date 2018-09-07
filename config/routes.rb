@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   get 'login/index'
   post 'login/ingreso'
   post 'login/recuperar'
+  get 'login/nuevapsw'
+  post 'login/cambio'
   #Perfil
   get 'perfil/hola'
 end

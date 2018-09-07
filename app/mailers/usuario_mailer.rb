@@ -18,4 +18,14 @@ class UsuarioMailer < ApplicationMailer
     mail(to: parametros['correo'], subject: 'Bienvenido a PUBLED', template_path: 'usuario_mailer',
          template_name: 'valida_usuario')
   end
+
+  def recuperar(parametros)
+    @usuario = parametros['nombre']+" "+parametros['apellido'].to_s
+    @cuerpo = 'Bienvenido a PUBLED, para recuperar su contraseña siga el siguiente enlace '
+    @recuperar = 1
+    @link = parametros['link']
+
+    mail(to: parametros['correo'], subject: 'Bienvenido a PUBLED', template_path: 'usuario_mailer',
+         template_name: 'valida_usuario')
+  end
 end
