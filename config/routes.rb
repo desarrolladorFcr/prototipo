@@ -27,5 +27,6 @@ Rails.application.routes.draw do
   get 'login/nuevapsw'
   post 'login/cambio'
   #Perfil
-  get 'perfil/hola'
+  get 'perfil/mis_cursos'
+  get 'perfil/cursos'
 end
