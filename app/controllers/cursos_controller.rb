@@ -97,10 +97,12 @@ class CursosController < ApplicationController
         end
 
         CursosHasProf.where(cursos_id: @curso.id).delete_all;
-        cursoProf = CursosHasProf.new
-        cursoProf.cursos_id = @curso.id
-        cursoProf.profesor_id = params['prof']
-        cursoProf.save
+        if params['curso']['certificable'] == '1'
+            cursoProf = CursosHasProf.new
+            cursoProf.cursos_id = @curso.id
+            cursoProf.profesor_id = params['prof']
+            cursoProf.save
+        end
         format.html { redirect_to @curso, notice: 'El curso fue correctamente actualizado' }
         format.json { render :show, status: :ok, location: @curso }
       else

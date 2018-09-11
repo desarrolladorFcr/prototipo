@@ -29,4 +29,6 @@ Rails.application.routes.draw do
   #Perfil
   get 'perfil/mis_cursos'
   get 'perfil/cursos'
+  #Api
+  get 'cursos_api/index'
 end
